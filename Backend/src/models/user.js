@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const v4 = require("uuid").v4;
 
 const { Schema } = mongoose;
 
@@ -70,6 +71,10 @@ const userSchema = new Schema({
         trim: true,
         required: [true, "Cgpa required!"],
       },
+      id: {
+        type: String,
+        default: v4(),
+      },
     },
   ],
   projects: [
@@ -96,9 +101,18 @@ const userSchema = new Schema({
           required: [true, "description required!"],
         },
       ],
+      id: {
+        type: String,
+        default: v4(),
+      },
     },
   ],
-  asaa: [{ type: String, trim: true }],
+  asaa: [
+    {
+      item: { type: String, trim: true },
+      id: { type: String, default: v4() },
+    },
+  ],
   skills: {
     computerLanguages: { type: String, trim: true },
     softwarePackages: { type: String, trim: true },
@@ -129,6 +143,10 @@ const userSchema = new Schema({
           required: [true, "Description required!"],
         },
       ],
+      id: {
+        type: String,
+        default: v4(),
+      },
     },
   ],
   references: [
@@ -138,6 +156,7 @@ const userSchema = new Schema({
       collegeCompanies: { type: String, trim: true },
       email: { type: String, trim: true },
       number: { type: String, trim: true },
+      id: { type: String, default: v4() },
     },
   ],
 });

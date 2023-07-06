@@ -3,3 +3,8 @@ Backend/node_modules
 Backend/.env
 Backend/src/uploads
 Backend/src/uploads/52f0f98c-ea78-4e0e-8097-eec9e466044d.pdf
+
+Frontend/node_modules
+Frontend/.next
+
+Image

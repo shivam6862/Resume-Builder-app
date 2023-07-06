@@ -6,5 +6,9 @@ module.exports = ASAA = (items, pdfDoc) => {
     align: "left",
     continued: true,
   });
-  pdfDoc.font("Helvetica").fontSize(9).list(items, { bulletRadius: 1.5 });
+  let newItems = [];
+  items.forEach((element) => {
+    newItems.push(element.item);
+  });
+  pdfDoc.font("Helvetica").fontSize(9).list(newItems, { bulletRadius: 1.5 });
 };
