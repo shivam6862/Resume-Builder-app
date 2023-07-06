@@ -7,10 +7,10 @@
 
 <br />
 <div align="center">
-<h2 align="center">Resume Builder app</h2>
+<h2 align="center">Resume Builder App</h2>
 
   <p align="center">
-   Resume Builder app
+   Resume Builder App
     <br />
     <br />
     <a href="https://github.com/shivam6862/Resume-Builder-app/issues">Report Bug</a>
@@ -31,7 +31,6 @@
     <li><a href="#usage">Description</a></li>
     <li><a href="#usage">Snapshot Gallery</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -45,6 +44,9 @@ Resume-Builder-app
 ### Built With
 
 - [![react][react]][react-url]
+- [![next][next]][next-url]
+- [![reduxjs][reduxjs]][reduxjs-url]
+- [![typescript][typescript]][reduxjs-url]
 - [![NodeJs][NodeJs]][NodeJs-url]
 - [![mongodb][mongodb]][mongodb-url]
 - [![VisualStudioCode][VisualStudioCode]][VisualStudioCode-url]
@@ -73,7 +75,7 @@ So as to run our project locally, you need to follow the steps below.
    ```sh
    npm run dev
    ```
-5. You can now view the project at `http://127.0.0.1:5173/`
+5. You can now view the project at `http://localhost:3000/`
 
 6. Install NPM packages on Backend folders
    ```sh
@@ -126,25 +128,13 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- CONTACT -->
 
-## Contact
-
-Linkedin - [@shivam-kumar](https://www.linkedin.com/in/shivam-kumar-14701b249/)
-
-Project Link: [https://github.com/shivam6862/](https://github.com/shivam6862/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
 ## Acknowledgments
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 - [GitHub Pages](https://pages.github.com)
 - [Font Awesome](https://fontawesome.com)
-- [MongoDb](https://www.mongodb.com/)
 
-* []() Finally, kudos to the team for the great work `shivam6862`
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/shivam6862/Resume-Builder-app.svg?style=for-the-badge
@@ -167,3 +157,9 @@ Use this space to list resources you find helpful and would like to give credit 
 [nodejs]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
 [mongodb-url]: https://www.mongodb.com/
 [mongodb]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
+[next-url]: https://nextjs.org/docs
+[next]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[reduxjs-url]: https://redux.js.org/
+[reduxjs]: https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white
+[typescript-url]: https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+[typescript]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white

@@ -1,10 +1,44 @@
 import React from "react";
 import Style from "../Styles/NavigationBar.module.css";
 
-const NavigationBar: React.FC = () => {
+interface NavigationBarProps {
+  setCurrent: (current: number) => void;
+}
+
+const NavigationBar: React.FC<NavigationBarProps> = ({ setCurrent }) => {
+  const NavigationBarItem = [
+    "Areas of Interest",
+    "Education Details",
+    "Contact Details",
+    "Internship Details",
+    "Job Experience",
+    "Projects",
+    "Achievements",
+    "Skills",
+    "Extra Curricular",
+    "Publications",
+    "Reference",
+  ];
+  const HandleNavigation = (current: number) => {
+    setCurrent(current);
+  };
   return (
     <div className={Style.container}>
-      <div className={Style.heading}>NavigationBar</div>
+      <div className={Style.box}>
+        {NavigationBarItem.map((item, index) => {
+          return (
+            <div
+              className={Style.item}
+              key={index}
+              onClick={() => {
+                HandleNavigation(index);
+              }}
+            >
+              {item}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

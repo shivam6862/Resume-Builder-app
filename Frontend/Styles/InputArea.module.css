@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: -webkit-fill-available;
+}
+.input {
+  padding: 0;
+  margin: 0;
+  font-size: 2rem;
+  color: #2185d0;
+}

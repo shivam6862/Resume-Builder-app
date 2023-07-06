@@ -11,11 +11,29 @@
 .editContainer {
   display: flex;
   align-content: center;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   width: -webkit-fill-available;
   min-height: 85vh;
   font-size: 2rem;
+}
+.left {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 2;
+}
+.right {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 2;
 }
