@@ -18,7 +18,7 @@ const AreasOfInterest: React.FC = () => {
             Press enter to add multiple Interest
           </div>
           <div className={Style.submit}>
-            <SaveButton />
+            <SaveButton page={"Areas of interest"} />
           </div>
         </div>
       </div>

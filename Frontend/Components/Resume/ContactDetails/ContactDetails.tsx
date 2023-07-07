@@ -26,7 +26,7 @@ const ContactDetails: React.FC = () => {
             </div>
           ))}
           <div className={Style.submit}>
-            <SaveButton />
+            <SaveButton page={"Contact details"} />
           </div>
         </div>
       </div>

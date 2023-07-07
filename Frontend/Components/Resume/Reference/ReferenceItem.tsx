@@ -25,7 +25,7 @@ const ReferenceItem: React.FC = () => {
           </div>
         ))}
         <div className={Style.submit}>
-          <SaveButton />
+          <SaveButton page={"Reference"} />
         </div>
       </div>
     </div>

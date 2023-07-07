@@ -25,7 +25,7 @@ const Skills: React.FC = () => {
             </div>
           ))}
           <div className={Style.submit}>
-            <SaveButton />
+            <SaveButton page={"Skills"} />
           </div>
         </div>
       </div>

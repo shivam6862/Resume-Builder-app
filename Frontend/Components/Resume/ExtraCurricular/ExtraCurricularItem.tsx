@@ -52,7 +52,7 @@ const ExtraCurricularItem: React.FC = () => {
           </div>
         </div>
         <div className={Style.submit}>
-          <SaveButton />
+          <SaveButton page={"Extra curricular"} />
         </div>
       </div>
     </div>

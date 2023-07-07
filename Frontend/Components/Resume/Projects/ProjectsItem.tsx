@@ -52,7 +52,7 @@ const ProjectsItem: React.FC = () => {
           </div>
         </div>
         <div className={Style.submit}>
-          <SaveButton />
+          <SaveButton page={"Project"} />
         </div>
       </div>
     </div>

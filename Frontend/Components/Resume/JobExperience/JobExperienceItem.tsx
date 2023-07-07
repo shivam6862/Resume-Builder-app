@@ -52,7 +52,7 @@ const JobExperienceItem: React.FC = () => {
           </div>
         </div>
         <div className={Style.submit}>
-          <SaveButton />
+          <SaveButton page={"Job experience"} />
         </div>
       </div>
     </div>

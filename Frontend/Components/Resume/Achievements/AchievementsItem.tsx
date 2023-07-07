@@ -14,7 +14,7 @@ const AchievementsItem: React.FC = () => {
           <InputArea />
         </div>
         <div className={Style.submit}>
-          <SaveButton />
+          <SaveButton page={"Achievements"} />
         </div>
       </div>
     </div>

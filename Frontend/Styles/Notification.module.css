@@ -1,0 +1,52 @@
+.container {
+  position: fixed;
+  z-index: 200;
+}
+.buttomright_1 {
+  top: 1rem;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.notification {
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #999;
+  color: #000;
+  opacity: 0.9;
+  transition: 0.3s ease;
+  padding: 1.2rem 0.8rem 0px 0px;
+}
+.buttomright {
+  animation: middle-top 0.5s;
+}
+.button {
+  float: right;
+  cursor: pointer;
+  line-height: 1.2rem;
+}
+.title {
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: left;
+  margin-top: 0;
+  padding-left: 1rem;
+  margin-bottom: 6px;
+  width: 30vw;
+  min-height: 1.1rem;
+}
+.lowerboder {
+  padding: 6px 0px;
+  background: #ffffff;
+  cursor: pointer;
+  display: block;
+  width: auto;
+}
+@keyframes middle-top {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}

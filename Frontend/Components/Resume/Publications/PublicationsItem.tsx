@@ -27,7 +27,7 @@ const PublicationsItem: React.FC = () => {
           </div>
         ))}
         <div className={Style.submit}>
-          <SaveButton />
+          <SaveButton page={"Publications"} />
         </div>
       </div>
     </div>
