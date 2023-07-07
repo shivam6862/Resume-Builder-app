@@ -4,12 +4,32 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  width: -webkit-fill-available;
+  width: 100%;
 }
 .input {
   padding: 0;
   margin: 0;
-  font-size: 2rem;
   color: #2185d0;
+  width: 100%;
+}
+.input > input {
+  border: 1px solid #9c9c9c;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #3d4152;
+  outline: none;
+  width: 100%;
+  padding: 0.6rem;
+  background: #ffffff;
+}
+.input > input:focus {
+  border: 1.2px solid #2185d0;
+  caret-color: #2185d0;
+}
+@media screen and (max-width: 320px) {
+  .input > input {
+    text-overflow: ellipsis;
+  }
 }

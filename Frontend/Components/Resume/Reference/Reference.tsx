@@ -5,7 +5,7 @@ import ReferenceItem from "./ReferenceItem";
 
 const Reference: React.FC = () => {
   return (
-    <div className={Style.container}>
+    <div className={Style.container_ResumePart}>
       <Heading heading="Reference" />
       <ReferenceItem />
     </div>

@@ -5,7 +5,7 @@ import PublicationsItem from "./PublicationsItem";
 
 const Publications: React.FC = () => {
   return (
-    <div className={Style.container}>
+    <div className={Style.container_ResumePart}>
       <Heading heading="Publications" />
       <PublicationsItem />
     </div>

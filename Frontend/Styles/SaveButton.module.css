@@ -5,11 +5,23 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  width: -webkit-fill-available;
 }
 .button {
   padding: 0;
   margin: 0;
-  font-size: 2rem;
-  color: #2185d0;
+  font-size: 1.25rem;
+  padding: 0.5rem 3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+}
+.button {
+  --COLOR_BODY: #2185d0;
+  color: var(--COLOR_BODY);
+  border: 2px solid var(--COLOR_BODY);
+}
+.button:hover {
+  --COLOR_BODY: #82c6f9;
+  color: white;
+  background-color: var(--COLOR_BODY);
 }

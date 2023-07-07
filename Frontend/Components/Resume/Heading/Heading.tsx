@@ -7,8 +7,8 @@ interface HeadingProps {
 
 const Heading: React.FC<HeadingProps> = ({ heading }) => {
   return (
-    <div className={Style.container}>
-      <div className={Style.heading}>{heading}</div>
+    <div className={Style.container_heading}>
+      <div className={Style.heading_heading}>{heading}</div>
     </div>
   );
 };

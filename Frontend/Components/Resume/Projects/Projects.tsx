@@ -5,7 +5,7 @@ import ProjectsItem from "./ProjectsItem";
 
 const Projects: React.FC = () => {
   return (
-    <div className={Style.container}>
+    <div className={Style.container_ResumePart}>
       <Heading heading="Projects" />
       <ProjectsItem />
     </div>

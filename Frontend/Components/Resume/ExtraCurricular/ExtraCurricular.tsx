@@ -5,7 +5,7 @@ import ExtraCurricularItem from "./ExtraCurricularItem";
 
 const ExtraCurricular: React.FC = () => {
   return (
-    <div className={Style.container}>
+    <div className={Style.container_ResumePart}>
       <Heading heading="Extra Curricular" />
       <ExtraCurricularItem />
     </div>

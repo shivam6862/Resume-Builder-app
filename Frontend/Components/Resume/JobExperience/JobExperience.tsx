@@ -5,7 +5,7 @@ import JobExperienceItem from "./JobExperienceItem";
 
 const JobExperience: React.FC = () => {
   return (
-    <div className={Style.container}>
+    <div className={Style.container_ResumePart}>
       <Heading heading="Job Experience" />
       <JobExperienceItem />
     </div>

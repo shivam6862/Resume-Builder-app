@@ -36,7 +36,7 @@ const Resume: React.FC<CurrentProps> = ({ current }) => {
   ];
   const CurrentComponent = ResumePages[current]?.Component;
   return (
-    <div className={Style.container}>
+    <div className={Style.container_Resume}>
       {CurrentComponent && <CurrentComponent />}
     </div>
   );

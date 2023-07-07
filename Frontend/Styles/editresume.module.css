@@ -7,27 +7,18 @@
   flex-wrap: wrap;
   width: -webkit-fill-available;
 }
-
 .editContainer {
   display: flex;
-  align-content: center;
+  align-content: flex-start;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
   width: -webkit-fill-available;
-  min-height: 85vh;
+  min-height: 80vh;
   font-size: 2rem;
 }
-.left {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex: 2;
-}
+.left,
 .right {
   display: flex;
   align-content: center;
@@ -36,4 +27,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   flex: 2;
+  padding-bottom: 2rem;
+  width: -webkit-fill-available;
+}
+@media screen and (max-width: 840px) {
+  .editContainer {
+    flex-direction: column;
+  }
+  .right {
+    border-top: 2px solid #2185d0;
+  }
 }

@@ -33,6 +33,12 @@
   border-bottom: 2.5px solid #2185d0;
 }
 .active {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.6rem 0rem 0.6rem 0rem;
+  min-height: 2.7rem;
   color: #2185d0;
   border-bottom: 2.5px solid #2185d0;
 }

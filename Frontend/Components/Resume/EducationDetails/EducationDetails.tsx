@@ -5,7 +5,7 @@ import EducationDetailsItem from "./EducationDetailsItem";
 
 const EducationDetails: React.FC = () => {
   return (
-    <div className={Style.container}>
+    <div className={Style.container_ResumePart}>
       <Heading heading="Education Details" />
       <EducationDetailsItem />
     </div>

@@ -3,9 +3,13 @@ import Style from "../Styles/NavigationBar.module.css";
 
 interface NavigationBarProps {
   setCurrent: (current: number) => void;
+  current: number;
 }
 
-const NavigationBar: React.FC<NavigationBarProps> = ({ setCurrent }) => {
+const NavigationBar: React.FC<NavigationBarProps> = ({
+  setCurrent,
+  current,
+}) => {
   const NavigationBarItem = [
     "Areas of Interest",
     "Education Details",
@@ -28,7 +32,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ setCurrent }) => {
         {NavigationBarItem.map((item, index) => {
           return (
             <div
-              className={Style.item}
+              className={current == index ? Style.active : Style.item}
               key={index}
               onClick={() => {
                 HandleNavigation(index);
