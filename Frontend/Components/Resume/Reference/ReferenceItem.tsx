@@ -3,27 +3,66 @@ import Style from "../../../Styles/Resume.module.css";
 import InputArea from "../../InputArea";
 import SaveButton from "../../SaveButton";
 
-const ReferenceItem: React.FC = () => {
-  const ReferenceItemData = [
-    "Referee",
-    "Designation",
-    "Instiute",
-    "Phone",
-    "Email",
-  ];
+interface ReferenceItemProps {
+  collegeCompanies: string;
+  email: string;
+  id: string;
+  name: string;
+  number: string;
+  work: string;
+}
+
+const ReferenceItem: React.FC<ReferenceItemProps> = ({
+  collegeCompanies,
+  email,
+  id,
+  name,
+  number,
+  work,
+}) => {
   return (
     <div className={Style.container_item}>
       <div className={Style.box_item}>
-        {ReferenceItemData.map((item, index) => (
-          <div className={Style.combine_Item} key={index}>
-            <div className={Style.achievement}>
-              {item} <div className={Style.compulsory}>*</div>
-            </div>
-            <div className={Style.input}>
-              <InputArea />
-            </div>
+        <div className={Style.combine_Item}>
+          <div className={Style.achievement}>
+            Referee <div className={Style.compulsory}>*</div>
           </div>
-        ))}
+          <div className={Style.input}>
+            <InputArea value={name} id={id} page={"references"} />
+          </div>
+        </div>
+        <div className={Style.combine_Item}>
+          <div className={Style.achievement}>
+            Designation <div className={Style.compulsory}>*</div>
+          </div>
+          <div className={Style.input}>
+            <InputArea value={work} id={id} page={"references"} />
+          </div>
+        </div>
+        <div className={Style.combine_Item}>
+          <div className={Style.achievement}>
+            Instiute <div className={Style.compulsory}>*</div>
+          </div>
+          <div className={Style.input}>
+            <InputArea value={collegeCompanies} id={id} page={"references"} />
+          </div>
+        </div>
+        <div className={Style.combine_Item}>
+          <div className={Style.achievement}>
+            Phone <div className={Style.compulsory}>*</div>
+          </div>
+          <div className={Style.input}>
+            <InputArea value={number} id={id} page={"references"} />
+          </div>
+        </div>
+        <div className={Style.combine_Item}>
+          <div className={Style.achievement}>
+            Email <div className={Style.compulsory}>*</div>
+          </div>
+          <div className={Style.input}>
+            <InputArea value={email} id={id} page={"references"} />
+          </div>
+        </div>
         <div className={Style.submit}>
           <SaveButton page={"Reference"} />
         </div>

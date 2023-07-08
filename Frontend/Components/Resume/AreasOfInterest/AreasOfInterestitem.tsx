@@ -3,28 +3,28 @@ import Style from "../../../Styles/Resume.module.css";
 import InputArea from "../../InputArea";
 import SaveButton from "../../SaveButton";
 
-interface AchievementsItemProps {
+interface AreaOfInterestItemProps {
   item: string;
   id: string;
 }
 
-const AchievementsItem: React.FC<AchievementsItemProps> = ({ item, id }) => {
+const AreasOfInterestitem: React.FC<AreaOfInterestItemProps> = ({
+  item,
+  id,
+}) => {
   return (
     <div className={Style.container_item}>
       <div className={Style.box_item}>
-        <div className={Style.achievement}>
-          Achievement
-          <div className={Style.compulsory}>*</div>
-        </div>
+        <div className={Style.achievement}>Areas Of Interest</div>
         <div className={Style.input}>
-          <InputArea value={item} id={id} page={"asaa"} />
+          <InputArea value={item} id={id} page={"aoi"} />
         </div>
         <div className={Style.submit}>
-          <SaveButton page={"Achievements"} />
+          <SaveButton page={"Areas of interest"} />
         </div>
       </div>
     </div>
   );
 };
 
-export default AchievementsItem;
+export default AreasOfInterestitem;

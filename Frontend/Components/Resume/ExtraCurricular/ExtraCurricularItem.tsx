@@ -4,22 +4,51 @@ import classes from "../../../Styles/InputArea.module.css";
 import InputArea from "../../InputArea";
 import SaveButton from "../../SaveButton";
 
-const ExtraCurricularItem: React.FC = () => {
-  const ExtraCurricularItemData = ["Position", "organisation", "Description"];
+interface ExtraCurricularItemProps {
+  name: string;
+  under: string;
+  description: string;
+  time: string;
+  id: string;
+}
+
+const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
+  name,
+  under,
+  description,
+  time,
+  id,
+}) => {
   return (
     <div className={Style.container_item}>
       <div className={Style.box_item}>
-        {ExtraCurricularItemData.map((item, index) => (
-          <div className={Style.combine_Item} key={index}>
-            <div className={Style.achievement}>
-              {item}
-              <div className={Style.compulsory}>*</div>
-            </div>
-            <div className={Style.input}>
-              <InputArea />
-            </div>
+        <div className={Style.combine_Item}>
+          <div className={Style.achievement}>
+            Position
+            <div className={Style.compulsory}>*</div>
           </div>
-        ))}
+          <div className={Style.input}>
+            <InputArea value={name} id={id} page={"poraec"} />
+          </div>
+        </div>
+        <div className={Style.combine_Item}>
+          <div className={Style.achievement}>
+            organisation
+            <div className={Style.compulsory}>*</div>
+          </div>
+          <div className={Style.input}>
+            <InputArea value={under} id={id} page={"poraec"} />
+          </div>
+        </div>
+        <div className={Style.combine_Item}>
+          <div className={Style.achievement}>
+            Description
+            <div className={Style.compulsory}>*</div>
+          </div>
+          <div className={Style.input}>
+            <InputArea value={description} id={id} page={"poraec"} />
+          </div>
+        </div>
         <div
           style={{
             width: "-webkit-fill-available",
@@ -35,7 +64,7 @@ const ExtraCurricularItem: React.FC = () => {
             <div style={{ width: "-webkit-fill-available" }}>
               <div className={classes.container}>
                 <div className={classes.input}>
-                  <input type="date" />
+                  <input type="date" value={time} />
                 </div>
               </div>
             </div>
