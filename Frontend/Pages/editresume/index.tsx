@@ -11,7 +11,7 @@ const editresume: React.FC = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/logo.jpeg" />
+        <link rel="icon" href="/logo.png" />
       </Head>
       <Header />
       <NavigationBar setCurrent={setCurrent} current={current} />

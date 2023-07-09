@@ -18,7 +18,7 @@ interface ContactDetailsProps {
   };
 }
 
-const ContactDetails: React.FC<ContactDetailsProps> = () => {
+const ContactDetails: React.FC = () => {
   const ContactDetailsHeading = {
     name: "Name of the Person",
     college: "Institute Name",

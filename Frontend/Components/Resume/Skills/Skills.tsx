@@ -15,7 +15,7 @@ interface SkillsProps {
   };
 }
 
-const Skills: React.FC<SkillsProps> = ({}) => {
+const Skills: React.FC = () => {
   const SkillsDataHeading = {
     computerLanguages: "Computer Languages",
     softwarePackages: "Software Packages",

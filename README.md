@@ -7,10 +7,11 @@
 
 <br />
 <div align="center">
+<a href="https://github.com/shivam6862/Resume-Builder-app"><img src="./Frontend/Public/logo.png" style="border-radius:12px"></a>
 <h2 align="center">Resume Builder App</h2>
 
   <p align="center">
-   Resume Builder App
+   Craft Your Perfect Resume with Our Advanced Builder App
     <br />
     <br />
     <a href="https://github.com/shivam6862/Resume-Builder-app/issues">Report Bug</a>
@@ -37,7 +38,7 @@
 
 ## About The Project
 
-Resume-Builder-app
+Our resume builder app is a powerful tool designed to streamline the process of creating professional resumes. Developed using cutting-edge technologies such as Next.js, Redux, Node.js, TypeScript, and MongoDB, our app aims to provide users with a seamless and intuitive experience while crafting their resumes.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,12 +101,22 @@ So as to run our project locally, you need to follow the steps below.
 
 ## Description
 
-Resume-Builder-app<br/>
+In today's competitive job market, a well-crafted resume can make all the difference in securing that dream job. However, creating a visually appealing and comprehensive resume can be a time-consuming and challenging task. That's where our resume builder app comes in.</br>
+
+The resume builder app is designed to help individuals create impressive resumes that stand out in today's competitive job market. By leveraging the power of Next.js, Redux, Node.js, TypeScript, and MongoDB, we have developed a feature-rich application that streamlines the resume creation process.</br>
+
+###### Key Features
+
+- User-Friendly Interface: The app offers an intuitive interface, ensuring that users can easily navigate through the resume-building process.
+- Dynamic Sections: Include relevant sections such as education, work experience, skills, projects, certifications, and more. Customize the sections based on your specific needs.
+- Real-Time Preview: Visualize your resume as you build it, allowing you to make instant adjustments and ensure a polished and professional result.
+- Export Options: Export your resume as a PDF or share it directly with potential employers or job platforms to maximize your job search opportunities.
+- Data Persistence: Your progress is securely stored using MongoDB, ensuring that you can access and modify your resume whenever and wherever needed.
 
 ## Snapshot Gallery
 
-<h2>Home Page</h2>
-<a href="https://github.com/shivam6862/Resume-Builder-app"><img src="./Frontend/public/image.png" style="border-radius:12px"></a>
+<h2>Resume Edit Page</h2>
+<a href="https://github.com/shivam6862/Resume-Builder-app"><img src="./Frontend/Public/image.png" style="border-radius:12px"></a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
