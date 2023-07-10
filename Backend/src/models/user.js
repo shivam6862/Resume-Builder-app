@@ -1,164 +1,83 @@
 const mongoose = require("mongoose");
-const v4 = require("uuid").v4;
+const crypto = require("crypto");
 
-const { Schema } = mongoose;
-
-const userSchema = new Schema({
-  userid: {
-    type: String,
-  },
-  general: {
-    name: {
-      type: String,
-      trim: true,
-      required: [true, "Name required!"],
-    },
-    semester: {
-      type: String,
-      trim: true,
-      required: [true, "Semester required!"],
-    },
-    branch: {
-      type: String,
-      trim: true,
-      required: [true, "Branch required!"],
-    },
-    number: {
-      type: String,
-      trim: true,
-      required: [true, "Number required!"],
-    },
-    email: {
-      type: String,
-      trim: true,
-      required: [true, "Email required!"],
-    },
-    registration: {
-      type: String,
-      trim: true,
-      required: [true, "Registration required!"],
-    },
-  },
-  college: {
+const UserSchema = new mongoose.Schema({
+  name: {
     type: String,
     trim: true,
-    required: [true, "College is required!"],
+    required: [true, "Name is required"],
   },
-  aoi: {
+  phone: {
     type: String,
     trim: true,
-    required: [true, "Area of Interest is required!"],
+    required: [true, "Number is required"],
   },
-  education: [
-    {
-      year: {
-        type: String,
-        trim: true,
-        required: [true, "Year required!"],
-      },
-      degree: {
-        type: String,
-        trim: true,
-        required: [true, "Degree required!"],
-      },
-      institution: {
-        type: String,
-        trim: true,
-        required: [true, "Institution required!"],
-      },
-      cgpa: {
-        type: String,
-        trim: true,
-        required: [true, "Cgpa required!"],
-      },
-      id: {
-        type: String,
-        default: v4(),
-      },
-    },
-  ],
-  projects: [
-    {
-      name: {
-        type: String,
-        trim: true,
-        required: [true, "Name required!"],
-      },
-      under: {
-        type: String,
-        trim: true,
-        required: [true, "Under required!"],
-      },
-      time: {
-        type: String,
-        trim: true,
-        required: [true, "Time required!"],
-      },
-      description: [
-        {
-          type: String,
-          trim: true,
-          required: [true, "description required!"],
-        },
-      ],
-      id: {
-        type: String,
-        default: v4(),
-      },
-    },
-  ],
-  asaa: [
-    {
-      item: { type: String, trim: true },
-      id: { type: String, default: v4() },
-    },
-  ],
-  skills: {
-    computerLanguages: { type: String, trim: true },
-    softwarePackages: { type: String, trim: true },
-    additionalCourses: { type: String, trim: true },
-    languagesKnown: { type: String, trim: true },
+  email: {
+    type: String,
+    trim: true,
+    unique: [true, "Email already exists"],
+    match: [
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+      "Please fill a valid email address",
+    ],
+    required: [true, "Email is required"],
   },
-  poraec: [
-    {
-      name: {
-        type: String,
-        trim: true,
-        required: [true, "Name required!"],
-      },
-      under: {
-        type: String,
-        trim: true,
-        required: [true, "under required!"],
-      },
-      time: {
-        type: String,
-        trim: true,
-        required: [true, "Time required!"],
-      },
-      description: [
-        {
-          type: String,
-          trim: true,
-          required: [true, "Description required!"],
-        },
-      ],
-      id: {
-        type: String,
-        default: v4(),
-      },
-    },
-  ],
-  references: [
-    {
-      name: { type: String, trim: true },
-      work: { type: String, trim: true },
-      collegeCompanies: { type: String, trim: true },
-      email: { type: String, trim: true },
-      number: { type: String, trim: true },
-      id: { type: String, default: v4() },
-    },
-  ],
+  created: {
+    type: Date,
+    default: Date.now,
+  },
+  resetToken: {
+    type: String,
+    default: "",
+  },
+  resetTokenExpiration: {
+    type: String,
+    default: "",
+  },
+  upadated: Date,
+  hashed_password: {
+    type: String,
+    required: [true, "Password is required"],
+  },
+  salt: String,
 });
 
-module.exports = mongoose.model("Users", userSchema);
+UserSchema.virtual("password")
+  .set(function (password) {
+    this._password = password;
+    this.salt = this.makeSalt();
+    this.hashed_password = this.encryptPassword(password);
+  })
+  .get(function () {
+    return this._password;
+  });
+
+UserSchema.methods = {
+  authenticate: function (plainText) {
+    return this.encryptPassword(plainText) === this.hashed_password;
+  },
+  encryptPassword: function (password) {
+    if (!password) return "";
+    try {
+      return crypto
+        .createHmac("sha1", this.salt)
+        .update(password)
+        .digest("hex");
+    } catch (err) {
+      return "";
+    }
+  },
+  makeSalt: function () {
+    return Math.round(new Date().valueOf() * Math.random()) + "";
+  },
+};
+UserSchema.path("hashed_password").validate(function (v) {
+  if (this._password && this._password.length < 6) {
+    this.invalidate("password", "Password must be at least 6 characters.");
+  }
+  if (this.isNew && !this._password) {
+    this.invalidate("password", "Password is required");
+  }
+}, null);
+
+module.exports = mongoose.model("User", UserSchema);

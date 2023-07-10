@@ -6,7 +6,7 @@ module.exports = getResumeRoutes = {
   handler: async (req, res) => {
     try {
       const { userid } = req.params;
-      const response = await getResume(userid, res);
+      const response = await getResume(userid);
       return res.status(200).send({
         message: "Resume created!",
         response: response,

@@ -1,6 +1,6 @@
 const User = require("../models/user");
 
-module.exports = getUser = async (userid) => {
+module.exports = getResume = async (userid) => {
   try {
     const user = await User.findOne({ userid: userid });
     return user;
