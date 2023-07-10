@@ -7,7 +7,9 @@
 
 <br />
 <div align="center">
-<a href="https://github.com/shivam6862/Resume-Builder-app"><img src="./Frontend/Public/logo.png" style="border-radius:12px"></a>
+<a href="https://github.com/shivam6862/Resume-Builder-app">
+   <img src="./Frontend/Public/logo.png" style="border-radius:12px" height="100px" width="100px">
+</a>
 <h2 align="center">Resume Builder App</h2>
 
   <p align="center">
