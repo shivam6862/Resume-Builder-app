@@ -3,12 +3,15 @@ import "../styles/globals.css";
 import store from "../Store/store";
 import { Provider } from "react-redux";
 import Notifications from "../Components/Notification/Notifications";
+import { AuthenticationContextProvider } from "../Store/Authentication-context";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <Notifications />
-      <Component {...pageProps} />
+      <AuthenticationContextProvider>
+        <Notifications />
+        <Component {...pageProps} />
+      </AuthenticationContextProvider>
     </Provider>
   );
 }

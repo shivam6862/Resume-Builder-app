@@ -3,6 +3,7 @@ import Head from "next/head";
 import Header from "../Components/Header";
 import Home from "../Components/Home";
 import styles from "../Styles/editresume.module.css";
+import Auth from "../Components/Authentication/Auth";
 
 const HomePage: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage: React.FC = () => {
       </Head>
       <Header />
       <Home />
+      <Auth />
     </div>
   );
 };
