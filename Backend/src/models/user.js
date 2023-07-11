@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const crypto = require("crypto");
+const v4 = require("uuid").v4;
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -11,6 +12,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: [true, "Number is required"],
+  },
+  id: {
+    type: String,
+    default: v4(),
   },
   email: {
     type: String,

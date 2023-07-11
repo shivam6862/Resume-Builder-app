@@ -8,7 +8,7 @@
 <br />
 <div align="center">
 <a href="https://github.com/shivam6862/Resume-Builder-app">
-   <img src="./Frontend/Public/logo.png" style="border-radius:12px" height="100px" width="100px">
+   <img src="./Frontend/Public/logo.png" style="border-radius:12px" height="90px" width="90px">
 </a>
 <h2 align="center">Resume Builder App</h2>
 
@@ -90,6 +90,7 @@ So as to run our project locally, you need to follow the steps below.
    ```
 8. Make the database in your mongodb server named as `Resume-Builder-app`
    ```sh
+   resumes
    users
    ```
 9. Run the project in backend using
