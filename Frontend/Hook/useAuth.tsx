@@ -7,7 +7,7 @@ const useAuth = () => {
   const { updatePersonalDetails } = useLocationLocalStorage();
   const Auth = async (data: any, type: string) => {
     try {
-      const response = await fetch(`http://localhost:8080/${type}`, {
+      const response = await fetch(`http://localhost:8080/user/${type}`, {
         method: "POST",
         headers: {
           Accept: "application/json",

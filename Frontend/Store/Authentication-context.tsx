@@ -3,7 +3,7 @@ import React, { useState, createContext, ReactNode } from "react";
 interface AuthenticationContextProps {
   open: {
     signupOpen: boolean;
-    VerifyOpen: boolean;
+    ResetPasswordOpen: boolean;
     LogInOpen: boolean;
     error: string;
   };
@@ -20,7 +20,7 @@ interface AuthenticationContextProps {
 const AuthenticationContext = createContext<AuthenticationContextProps>({
   open: {
     signupOpen: false,
-    VerifyOpen: false,
+    ResetPasswordOpen: false,
     LogInOpen: false,
     error: "",
   },
@@ -43,7 +43,7 @@ export const AuthenticationContextProvider: React.FC<
 > = ({ children }) => {
   const [open, setOpen] = useState({
     signupOpen: false,
-    VerifyOpen: false,
+    ResetPasswordOpen: false,
     LogInOpen: false,
     error: "",
   });
@@ -55,7 +55,7 @@ export const AuthenticationContextProvider: React.FC<
   });
 
   const showHandler = (name: string) => {
-    if (name === "VerifyOpen") {
+    if (name === "ResetPasswordOpen") {
       setOpen({
         error: "",
         LogInOpen: false,
@@ -65,14 +65,14 @@ export const AuthenticationContextProvider: React.FC<
     } else if (name === "signupOpen") {
       setOpen({
         error: "",
-        VerifyOpen: false,
+        ResetPasswordOpen: false,
         [name]: true,
         LogInOpen: false,
       });
     } else if (name === "LogInOpen") {
       setOpen({
         error: "",
-        VerifyOpen: false,
+        ResetPasswordOpen: false,
         [name]: true,
         signupOpen: false,
       });
@@ -83,7 +83,7 @@ export const AuthenticationContextProvider: React.FC<
     if (name === "all") {
       setOpen({
         signupOpen: false,
-        VerifyOpen: false,
+        ResetPasswordOpen: false,
         LogInOpen: false,
         error: "",
       });

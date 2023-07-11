@@ -3,11 +3,14 @@ import classes from "../../Styles/Auth.module.css";
 import Svgcross from "../../Public/SvgCross";
 import AuthenticationContext from "../../Store/Authentication-context";
 import useAuth from "../../Hook/useAuth";
+import SvgOpen from "../../Public/SvgOpen";
+import SvgClosed from "../../Public/SvgClosed";
 
 interface Values {
   phone: string;
   name: string;
   email: string;
+  password: string;
   open: boolean;
   error: string;
 }
@@ -19,9 +22,11 @@ const SignUP = () => {
     phone: "",
     name: "",
     email: "",
+    password: "",
     open: false,
     error: "",
   });
+  const [isTextPassword, setIsTextPassword] = useState<boolean>(true);
 
   const handleChange =
     (name: string) => (event: ChangeEvent<HTMLInputElement>) => {
@@ -32,13 +37,29 @@ const SignUP = () => {
     e.preventDefault();
     AuthenticationCtx.setDetails(values.phone, values.name, values.email);
     const response = await Auth(
-      { number: values.phone, name: values.name, email: values.email },
+      {
+        number: values.phone,
+        name: values.name,
+        email: values.email,
+        password: values.password,
+      },
       "signup"
     );
     if (response == "true") {
-      setValues({ phone: "", name: "", email: "", error: "", open: true });
+      setValues({
+        phone: "",
+        name: "",
+        email: "",
+        error: "",
+        open: true,
+        password: "",
+      });
       AuthenticationCtx.onShow("LogInOpen");
     }
+  };
+
+  const openResetPasswordHandler = () => {
+    AuthenticationCtx.onShow("ResetPasswordOpen");
   };
 
   const hideHandler = () => {
@@ -91,6 +112,20 @@ const SignUP = () => {
             value={values.phone}
             onChange={handleChange("phone")}
           />
+          <input
+            type={!isTextPassword ? "text" : "password"}
+            placeholder="Password"
+            value={values.password}
+            onChange={handleChange("password")}
+          />
+          <div
+            className={classes.openclosed}
+            onClick={() => {
+              setIsTextPassword((prev) => !prev);
+            }}
+          >
+            {!isTextPassword ? <SvgOpen /> : <SvgClosed />}
+          </div>
         </div>
         <div
           className={classes.continue}
@@ -103,6 +138,12 @@ const SignUP = () => {
         <div className={classes.privacy_policy}>
           By creating an account, I accept the Terms & Conditions & Privacy
           Policy
+        </div>
+        <div
+          className={classes.forgotPassord}
+          onClick={openResetPasswordHandler}
+        >
+          Forgot Password
         </div>
       </div>
     </div>

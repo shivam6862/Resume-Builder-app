@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Backdrop from "../Backdrop";
 import SignUP from "./SignUp";
-import Verify from "./Verify";
+import ResetPassword from "./ResetPassword";
 import LogIn from "./LogIn";
 import classes from "../../Styles/Auth.module.css";
 import AuthenticationContext from "../../Store/Authentication-context";
@@ -11,7 +11,7 @@ const Auth = () => {
   const open = AuthenticationCtx.open;
   return (
     <div className={classes.Auth_container}>
-      {(open.signupOpen || open.VerifyOpen || open.LogInOpen) && (
+      {(open.signupOpen || open.ResetPasswordOpen || open.LogInOpen) && (
         <Backdrop
           onClick={() => {
             AuthenticationCtx.onHide("all");
@@ -20,7 +20,7 @@ const Auth = () => {
       )}
       <div className={classes.auth_box}>
         {open.signupOpen && <SignUP />}
-        {open.VerifyOpen && <Verify />}
+        {open.ResetPasswordOpen && <ResetPassword />}
         {open.LogInOpen && <LogIn />}
       </div>
     </div>

@@ -76,6 +76,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
 }
 .form input {
   border: 1px solid #ddd;
@@ -88,6 +89,12 @@
   width: 97%;
   padding: 1.2rem;
   padding-left: 0.75rem;
+}
+.openclosed {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  cursor: pointer;
 }
 .continue {
   margin-top: 1rem;
@@ -112,6 +119,19 @@
   color: #2185d0;
   margin-top: 6px;
   font-weight: 500;
+}
+.forgotPassord {
+  width: -webkit-fill-available;
+  text-align: right;
+  padding-top: 0.5rem;
+  color: #2185d0;
+  cursor: pointer;
+}
+.forgotPassord:hover {
+  color: red;
+}
+.continue:hover {
+  background-color: #01477c;
 }
 @media screen and (max-width: 1040px) {
   .box {
