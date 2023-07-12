@@ -14,7 +14,7 @@ module.exports = insertSignUpRoute = {
       });
     } catch (err) {
       return res.status(400).send({
-        message: "User Not Created!",
+        message: "User already exisit !",
         response: err.message,
         type: "Error",
       });

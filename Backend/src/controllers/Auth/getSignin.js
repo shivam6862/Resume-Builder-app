@@ -8,13 +8,13 @@ const getSignin = async (userData) => {
     const user = await User.findOne({ email: userData.email });
     if (!user) {
       return {
-        error: "User Not found",
+        message: "User Not found",
         type: "Error",
       };
     }
     if (!user.authenticate(userData.password)) {
       return {
-        error: "Email and password don't match.",
+        message: "Email and password don't match.",
         type: "Error",
       };
     }
@@ -25,13 +25,14 @@ const getSignin = async (userData) => {
       config.jwtSecret
     );
     return {
-      token,
-      user: {
+      response: {
+        token: token,
         id: user.id,
         name: user.name,
         email: user.email,
-        type: "Success",
       },
+      message: "Login in Successfully!",
+      type: "Success",
     };
   } catch (err) {
     console.log(err.message);

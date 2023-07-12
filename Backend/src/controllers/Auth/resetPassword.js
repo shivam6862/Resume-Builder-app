@@ -27,10 +27,10 @@ module.exports = resetPassword = async (userData) => {
     const token = buffer.toString("hex");
     const user = await User.findOne({ email: userData.email });
     if (!user) {
-      return { error: "No account with that email is found!", type: "Error" };
+      return { message: "No account with that email is found!", type: "Error" };
     }
     user.resetToken = token;
-    user.resetTokenExpiration = Date.now() + 600000;
+    user.resetTokenExpiration = Date.now() + 3600000;
     await user.save();
 
     // transporter.sendMail({

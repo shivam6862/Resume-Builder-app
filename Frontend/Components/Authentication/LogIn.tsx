@@ -35,7 +35,7 @@ const LogIn = () => {
       { email: values.email, password: values.password },
       "signin"
     );
-    if (response === "true") {
+    if (response === "Success") {
       AuthenticationCtx.setDetails(values.email, "", "");
       setValues({ email: "", open: true, error: "", password: "" });
     }

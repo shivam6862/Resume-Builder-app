@@ -138,3 +138,24 @@
     min-width: -webkit-fill-available;
   }
 }
+.resetcontainer {
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 600px) {
+  .resetcontainer {
+    width: 80vw;
+  }
+}
+.wronguser {
+  text-align: center;
+  font-size: 2rem;
+  color: #2185d0;
+  box-shadow: #06182c66 0 0 0 2px, #06182ca6 0 4px 6px -1px,
+    #ffffff14 0 1px inset;
+  padding: 2rem;
+  border-radius: 1rem;
+}

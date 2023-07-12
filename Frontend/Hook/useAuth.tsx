@@ -16,11 +16,14 @@ const useAuth = () => {
         body: JSON.stringify(data),
       });
       const responsedata = await response.json();
-      dispatch(addNewNotification(responsedata.message, "Info"));
-      if (responsedata.navigate == "true" && type == "verify") {
-        updatePersonalDetails(responsedata);
+      dispatch(addNewNotification(responsedata.message, responsedata.type));
+      if (
+        (responsedata.type == "Success" && type == "signin") ||
+        (responsedata.type == "Success" && type == "newPassword")
+      ) {
+        updatePersonalDetails(responsedata.response);
       }
-      return responsedata.navigate;
+      return responsedata.type;
     } catch (err) {
       console.log(err);
       dispatch(addNewNotification("Check your connection!", "Error"));

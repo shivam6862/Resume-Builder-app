@@ -26,8 +26,8 @@ const ResetPassword = () => {
 
   const submit = async (e: FormEvent<HTMLDivElement>) => {
     e.preventDefault();
-    const response = await Auth({ email: values.email }, "ResetPassword");
-    if (response == "true") {
+    const response = await Auth({ email: values.email }, "resetpassword");
+    if (response == "Success") {
       setValues({ email: "", open: true, error: "" });
       AuthenticationCtx.onHide("ResetPasswordOpen");
     }

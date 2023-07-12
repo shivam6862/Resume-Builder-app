@@ -14,6 +14,7 @@ module.exports = getNewPassword = async (token) => {
     }
     return {
       message: `Reset your Password!`,
+      email: user.email,
       userId: user.id,
       passwordToken: user.resetToken,
       type: "Success",

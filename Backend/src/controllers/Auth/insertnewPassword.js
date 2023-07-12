@@ -13,8 +13,8 @@ module.exports = insertnewPassword = async (userData) => {
     resetUser.password = newPassword;
     resetUser.resetToken = "";
     resetUser.resetTokenExpiration = "";
-    await resetUser.save();
-    return { message: `Password reset suucessfully!`, type: "Success" };
+    const response = await resetUser.save();
+    return response;
   } catch (err) {
     console.log(err.message);
     throw err;

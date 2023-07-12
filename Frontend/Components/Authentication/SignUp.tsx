@@ -38,14 +38,14 @@ const SignUP = () => {
     AuthenticationCtx.setDetails(values.phone, values.name, values.email);
     const response = await Auth(
       {
-        number: values.phone,
+        phone: values.phone,
         name: values.name,
         email: values.email,
         password: values.password,
       },
       "signup"
     );
-    if (response == "true") {
+    if (response == "Success") {
       setValues({
         phone: "",
         name: "",
