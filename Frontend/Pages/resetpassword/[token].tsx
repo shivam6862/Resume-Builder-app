@@ -5,8 +5,7 @@ import useAuth from "../../Hook/useAuth";
 import SvgOpen from "../../Public/SvgOpen";
 import SvgClosed from "../../Public/SvgClosed";
 import LoadingSpinner from "../../Components/LoadingSpinner";
-import { addNewNotification } from "../../Store/notificationSlice";
-import { useDispatch } from "react-redux";
+import { useNotification } from "../../Hook/useNotification";
 
 interface Values {
   email: string;
@@ -22,8 +21,8 @@ interface backendUser {
 }
 const resetpassword = () => {
   const router = useRouter();
-  const dispatch = useDispatch();
   const { token } = router.query;
+  const { NotificationHook } = useNotification();
   const [correctUser, setCorrectUser] = useState<string>("0");
   const [backendUserData, setbackendUserData] = useState<backendUser>({
     email: "",
@@ -44,7 +43,7 @@ const resetpassword = () => {
           }
         );
         const responsedata = await response.json();
-        dispatch(addNewNotification(responsedata.message, responsedata.type));
+        NotificationHook(responsedata.message, responsedata.type);
         if (responsedata.type == "Error") {
           setCorrectUser("1");
         } else {

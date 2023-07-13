@@ -32,7 +32,12 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
             Title <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={title} id={id} page={"Publications"} />
+            <InputArea
+              value={title}
+              id={id}
+              page={"Publications"}
+              where={"Title"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -40,7 +45,12 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
             Authors <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={authors} id={id} page={"Publications"} />
+            <InputArea
+              value={authors}
+              id={id}
+              page={"Publications"}
+              where={"Authors"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -48,7 +58,12 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
             Publisher <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={publisher} id={id} page={"Publications"} />
+            <InputArea
+              value={publisher}
+              id={id}
+              page={"Publications"}
+              where={"Publisher"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -56,7 +71,12 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
             Year <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={year} id={id} page={"Publications"} />
+            <InputArea
+              value={year}
+              id={id}
+              page={"Publications"}
+              where={"Year"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -64,7 +84,12 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
             Pages <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={pages} id={id} page={"Publications"} />
+            <InputArea
+              value={pages}
+              id={id}
+              page={"Publications"}
+              where={"Pages"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -72,7 +97,12 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
             Volumes <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={volumes} id={id} page={"Publications"} />
+            <InputArea
+              value={volumes}
+              id={id}
+              page={"Publications"}
+              where={"Volumes"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -80,11 +110,16 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
             Journal <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={journal} id={id} page={"Publications"} />
+            <InputArea
+              value={journal}
+              id={id}
+              page={"Publications"}
+              where={"Journal"}
+            />
           </div>
         </div>
         <div className={Style.submit}>
-          <SaveButton page={"Publications"} />
+          <SaveButton page={"Publications"} findIn={"Publications"} id={id} />
         </div>
       </div>
     </div>

@@ -35,12 +35,12 @@ const Skills: React.FC = () => {
                 {SkillsDataHeading[key as keyof typeof SkillsDataHeading]}
               </div>
               <div className={Style.input}>
-                <InputArea value={value} id={key} page={"skills"} />
+                <InputArea value={value} id={key} page={"skills"} where={key} />
               </div>
             </div>
           ))}
           <div className={Style.submit}>
-            <SaveButton page={"Skills"} />
+            <SaveButton page={"Skills"} findIn={"skills"} id="" />
           </div>
         </div>
       </div>

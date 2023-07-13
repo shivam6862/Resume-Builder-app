@@ -28,7 +28,12 @@ const ReferenceItem: React.FC<ReferenceItemProps> = ({
             Referee <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={name} id={id} page={"references"} />
+            <InputArea
+              value={name}
+              id={id}
+              page={"references"}
+              where={"name"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -36,7 +41,12 @@ const ReferenceItem: React.FC<ReferenceItemProps> = ({
             Designation <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={work} id={id} page={"references"} />
+            <InputArea
+              value={work}
+              id={id}
+              page={"references"}
+              where={"work"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -44,7 +54,12 @@ const ReferenceItem: React.FC<ReferenceItemProps> = ({
             Instiute <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={collegeCompanies} id={id} page={"references"} />
+            <InputArea
+              value={collegeCompanies}
+              id={id}
+              page={"references"}
+              where={"collegeCompanies"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -52,7 +67,12 @@ const ReferenceItem: React.FC<ReferenceItemProps> = ({
             Phone <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={number} id={id} page={"references"} />
+            <InputArea
+              value={number}
+              id={id}
+              page={"references"}
+              where={"number"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -60,11 +80,16 @@ const ReferenceItem: React.FC<ReferenceItemProps> = ({
             Email <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={email} id={id} page={"references"} />
+            <InputArea
+              value={email}
+              id={id}
+              page={"references"}
+              where={"email"}
+            />
           </div>
         </div>
         <div className={Style.submit}>
-          <SaveButton page={"Reference"} />
+          <SaveButton page={"Reference"} findIn={"references"} id={id} />
         </div>
       </div>
     </div>

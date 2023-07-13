@@ -1,9 +1,8 @@
-import { addNewNotification } from "../Store/notificationSlice";
-import { useDispatch } from "react-redux";
 import { useLocationLocalStorage } from "./LocationLocalStorage";
+import { useNotification } from "./useNotification";
 
 const useAuth = () => {
-  const dispatch = useDispatch();
+  const { NotificationHook } = useNotification();
   const { updatePersonalDetails } = useLocationLocalStorage();
   const Auth = async (data: any, type: string) => {
     try {
@@ -16,7 +15,7 @@ const useAuth = () => {
         body: JSON.stringify(data),
       });
       const responsedata = await response.json();
-      dispatch(addNewNotification(responsedata.message, responsedata.type));
+      NotificationHook(responsedata.message, responsedata.type);
       if (
         (responsedata.type == "Success" && type == "signin") ||
         (responsedata.type == "Success" && type == "newPassword")
@@ -26,7 +25,7 @@ const useAuth = () => {
       return responsedata.type;
     } catch (err) {
       console.log(err);
-      dispatch(addNewNotification("Check your connection!", "Error"));
+      NotificationHook("Check your connection!", "Error");
       return "false";
     }
   };

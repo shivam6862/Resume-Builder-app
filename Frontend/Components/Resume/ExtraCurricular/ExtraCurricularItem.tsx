@@ -28,7 +28,7 @@ const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={name} id={id} page={"poraec"} />
+            <InputArea value={name} id={id} page={"poraec"} where={"name"} />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -37,7 +37,7 @@ const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={under} id={id} page={"poraec"} />
+            <InputArea value={under} id={id} page={"poraec"} where={"under"} />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -46,7 +46,12 @@ const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={description} id={id} page={"poraec"} />
+            <InputArea
+              value={description}
+              id={id}
+              page={"poraec"}
+              where={"description"}
+            />
           </div>
         </div>
         <div
@@ -81,7 +86,7 @@ const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
           </div>
         </div>
         <div className={Style.submit}>
-          <SaveButton page={"Extra curricular"} />
+          <SaveButton page={"Extra curricular"} findIn={"poraec"} id={id} />
         </div>
       </div>
     </div>

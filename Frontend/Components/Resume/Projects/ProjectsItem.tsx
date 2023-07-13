@@ -32,7 +32,7 @@ const ProjectsItem: React.FC<ProjectsItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={name} id={id} page={"projects"} />
+            <InputArea value={name} id={id} page={"projects"} where={"name"} />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -41,7 +41,12 @@ const ProjectsItem: React.FC<ProjectsItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={under} id={id} page={"projects"} />
+            <InputArea
+              value={under}
+              id={id}
+              page={"projects"}
+              where={"under"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -50,7 +55,12 @@ const ProjectsItem: React.FC<ProjectsItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={description} id={id} page={"projects"} />
+            <InputArea
+              value={description}
+              id={id}
+              page={"projects"}
+              where={"description"}
+            />
           </div>
         </div>
         <div
@@ -85,7 +95,7 @@ const ProjectsItem: React.FC<ProjectsItemProps> = ({
           </div>
         </div>
         <div className={Style.submit}>
-          <SaveButton page={"Project"} />
+          <SaveButton page={"Project"} findIn={"projects"} id={id} />
         </div>
       </div>
     </div>

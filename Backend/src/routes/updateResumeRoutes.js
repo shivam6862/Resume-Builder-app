@@ -11,11 +11,13 @@ module.exports = updateResumeRoutes = {
       return res.status(200).send({
         message: "Resume updated Sucessfully!",
         response: response,
+        type: "Success",
       });
     } catch (err) {
       return res.status(400).send({
         message: "Resume Not updated!",
         response: err.message,
+        type: "Error",
       });
     }
   },

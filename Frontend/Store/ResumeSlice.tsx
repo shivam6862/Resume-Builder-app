@@ -22,16 +22,12 @@ const ResumeSlice = createSlice({
       action: PayloadAction<{ field: string; data: any }>
     ) => {
       const { field, data } = action.payload;
-      console.log(field, data);
-      console.log(state[field]);
       if (Array.isArray(state[field])) {
         state[field] = state[field].map((item) =>
           item.id === data.id ? data : item
         );
-        console.log(state[field]);
       } else if (typeof state[field] === "object") {
-        state[field][data.id] = data.item;
-        console.log(state[field][data.id]);
+        state[field] = data;
       }
     },
   },

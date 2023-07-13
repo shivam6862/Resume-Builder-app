@@ -30,7 +30,12 @@ const JobExperienceItem: React.FC<JobExperiencesProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={position} id={id} page={"JobExperience"} />
+            <InputArea
+              value={position}
+              id={id}
+              page={"JobExperience"}
+              where={"Position"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -39,7 +44,12 @@ const JobExperienceItem: React.FC<JobExperiencesProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={organisation} id={id} page={"JobExperience"} />
+            <InputArea
+              value={organisation}
+              id={id}
+              page={"JobExperience"}
+              where={"Organisation"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -48,7 +58,12 @@ const JobExperienceItem: React.FC<JobExperiencesProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={description} id={id} page={"JobExperience"} />
+            <InputArea
+              value={description}
+              id={id}
+              page={"JobExperience"}
+              where={"Description"}
+            />
           </div>
         </div>
         <div
@@ -83,7 +98,11 @@ const JobExperienceItem: React.FC<JobExperiencesProps> = ({
           </div>
         </div>
         <div className={Style.submit}>
-          <SaveButton page={"Job experience"} />
+          <SaveButton
+            page={"Job experience"}
+            findIn={"JobExperience"}
+            id={id}
+          />
         </div>
       </div>
     </div>

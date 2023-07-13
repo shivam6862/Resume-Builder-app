@@ -31,7 +31,6 @@ const ContactDetails: React.FC = () => {
   const ContactDetailsData = useSelector(
     (state: RootState) => state.userResume.general
   );
-
   return (
     <div className={Style.container_ResumePart}>
       <Heading heading="Contact Details" />
@@ -47,12 +46,17 @@ const ContactDetails: React.FC = () => {
                 }
               </div>
               <div className={Style.input}>
-                <InputArea value={value} id={key} page={"general"} />
+                <InputArea
+                  value={value}
+                  id={key}
+                  page={"general"}
+                  where={key}
+                />
               </div>
             </div>
           ))}
           <div className={Style.submit}>
-            <SaveButton page={"Contact details"} />
+            <SaveButton page={"Contact details"} findIn={"general"} id="" />
           </div>
         </div>
       </div>

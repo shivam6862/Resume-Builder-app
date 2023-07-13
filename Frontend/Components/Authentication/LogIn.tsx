@@ -37,6 +37,7 @@ const LogIn = () => {
     );
     if (response === "Success") {
       AuthenticationCtx.setDetails(values.email, "", "");
+      AuthenticationCtx.onHide("all");
       setValues({ email: "", open: true, error: "", password: "" });
     }
   };

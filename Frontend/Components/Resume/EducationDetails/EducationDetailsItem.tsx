@@ -31,7 +31,7 @@ const EducationDetailsItem: React.FC<EducationDetailsItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={year} id={id} page={"education"} />
+            <InputArea value={year} id={id} page={"education"} where={"year"} />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -40,13 +40,23 @@ const EducationDetailsItem: React.FC<EducationDetailsItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={institution} id={id} page={"education"} />
+            <InputArea
+              value={institution}
+              id={id}
+              page={"education"}
+              where={"institution"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
           <div className={Style.achievement}>Field</div>
           <div className={Style.input}>
-            <InputArea value={field} id={id} page={"education"} />
+            <InputArea
+              value={field}
+              id={id}
+              page={"education"}
+              where={"field"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -55,7 +65,12 @@ const EducationDetailsItem: React.FC<EducationDetailsItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={degree} id={id} page={"education"} />
+            <InputArea
+              value={degree}
+              id={id}
+              page={"education"}
+              where={"degree"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -64,7 +79,12 @@ const EducationDetailsItem: React.FC<EducationDetailsItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={graduation} id={id} page={"education"} />
+            <InputArea
+              value={graduation}
+              id={id}
+              page={"education"}
+              where={"graduation"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -73,11 +93,11 @@ const EducationDetailsItem: React.FC<EducationDetailsItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={cgpa} id={id} page={"education"} />
+            <InputArea value={cgpa} id={id} page={"education"} where={"cgpa"} />
           </div>
         </div>
         <div className={Style.submit}>
-          <SaveButton page={"Education detail"} />
+          <SaveButton page={"Education detail"} findIn={"education"} id={id} />
         </div>
       </div>
     </div>

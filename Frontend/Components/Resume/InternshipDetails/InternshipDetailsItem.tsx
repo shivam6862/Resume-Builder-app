@@ -30,7 +30,12 @@ const InternshipDetailsItem: React.FC<InternshipDetailsProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={company} id={id} page={"InternshipDetails"} />
+            <InputArea
+              value={company}
+              id={id}
+              page={"InternshipDetails"}
+              where={"Company"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -39,13 +44,23 @@ const InternshipDetailsItem: React.FC<InternshipDetailsProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={title} id={id} page={"InternshipDetails"} />
+            <InputArea
+              value={title}
+              id={id}
+              page={"InternshipDetails"}
+              where={"Title"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
           <div className={Style.achievement}>Description</div>
           <div className={Style.input}>
-            <InputArea value={description} id={id} page={"InternshipDetails"} />
+            <InputArea
+              value={description}
+              id={id}
+              page={"InternshipDetails"}
+              where={"Description"}
+            />
           </div>
         </div>
         <div
@@ -80,7 +95,11 @@ const InternshipDetailsItem: React.FC<InternshipDetailsProps> = ({
           </div>
         </div>
         <div className={Style.submit}>
-          <SaveButton page={" Internship detail"} />
+          <SaveButton
+            page={" Internship detail"}
+            findIn={"InternshipDetails"}
+            id={id}
+          />
         </div>
       </div>
     </div>
