@@ -6,11 +6,14 @@ module.exports = Skills = (skills, pdfDoc) => {
     additionalCourses: "     Additional Courses",
     languagesKnown: "     Languages Known",
   };
+  pdfDoc.x = pdfDoc.page.margins.left + 20;
   Object.entries(skills).forEach(([key, value]) => {
-    pdfDoc.font("Helvetica").fontSize(9).text(`${keyNew[key]}   `, {
-      continued: true,
-      align: "left",
-    });
-    pdfDoc.text(value, { align: "left" });
+    if (value != "") {
+      pdfDoc.font("Helvetica").fontSize(9).text(`${keyNew[key]}   `, {
+        continued: true,
+        align: "left",
+      });
+      pdfDoc.text(value, { align: "left" });
+    }
   });
 };

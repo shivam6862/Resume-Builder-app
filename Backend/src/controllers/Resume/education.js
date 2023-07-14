@@ -7,7 +7,7 @@ module.exports = education = (education, pdfDoc) => {
   const columnWidths = [0, 60, 200, 450, 560];
   const rowHeightHead = 26;
   const rowHeightTag = 16;
-  const numColumns = education.length + 1;
+  const numColumns = 3 + 1;
   const borderWidth = 0.75;
   const borderColor = "#636363";
   pdfDoc.font("Helvetica", 600).fontSize(11);

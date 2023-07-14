@@ -17,6 +17,9 @@ module.exports = Projects = (projects, pdfDoc) => {
         align: "left",
         continued: true,
       });
+    if (project.time == "") {
+      pdfDoc.y += 10;
+    }
     pdfDoc
       .font("Helvetica")
       .fontSize(9)

@@ -16,6 +16,14 @@ module.exports = general = (userid, general, college, pdfDoc) => {
         align: "left",
       });
   } catch (err) {
+    const dummyImage = path.join("src", "uploads", `user.jpeg`);
+    pdfDoc
+      .fontSize(11)
+      .image(dummyImage, pdfDoc.page.margins.left, pdfDoc.page.margins.top, {
+        width: logoWidth,
+        height: logoHeight,
+        align: "left",
+      });
     console.log(err.message);
   }
 
@@ -28,8 +36,8 @@ module.exports = general = (userid, general, college, pdfDoc) => {
     );
   pdfDoc
     .fontSize(9)
-    .text(general.semester, {})
-    .text(general.branch, {})
+    .text("Semester: " + general.semester, {})
+    .text("Branch: " + general.branch, {})
     .text("Contact No: " + general.number, {})
     .text("Email: " + general.email, {})
     .text("Registration No: " + general.registration, {});
@@ -59,5 +67,5 @@ module.exports = general = (userid, general, college, pdfDoc) => {
         align: "right",
       }
     );
-  pdfDoc.moveDown(2);
+  pdfDoc.y = 110;
 };

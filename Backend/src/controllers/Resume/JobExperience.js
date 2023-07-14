@@ -1,4 +1,4 @@
-module.exports = Poreca = (projects, pdfDoc) => {
+module.exports = JobExperience = (projects, pdfDoc) => {
   pdfDoc.moveDown(0.25);
   const ProjectsX = pdfDoc.page.margins.left;
   let ProjectsY = pdfDoc.y;
@@ -6,14 +6,14 @@ module.exports = Poreca = (projects, pdfDoc) => {
     pdfDoc
       .font("Helvetica-Bold")
       .fontSize(10)
-      .text(project.name, ProjectsX, ProjectsY, {
+      .text(project.Position, ProjectsX, ProjectsY, {
         align: "left",
         continued: true,
       });
     pdfDoc
       .font("Helvetica")
       .fontSize(9)
-      .text("  |  " + project.under, ProjectsX, ProjectsY, {
+      .text("  |  " + project.Organisation, ProjectsX, ProjectsY, {
         align: "left",
         continued: true,
       });
@@ -23,14 +23,14 @@ module.exports = Poreca = (projects, pdfDoc) => {
     pdfDoc
       .font("Helvetica")
       .fontSize(9)
-      .text(project.time, ProjectsX, ProjectsY, {
+      .text(project.StartDate + "  " + project.EndDate, ProjectsX, ProjectsY, {
         align: "right",
       });
     pdfDoc.moveDown(0.2);
     pdfDoc
       .font("Helvetica")
       .fontSize(9)
-      .list(project.description, { bulletRadius: 1.5 });
+      .list(project.Description, { bulletRadius: 1.5 });
     pdfDoc.moveDown(0.2);
     ProjectsY = pdfDoc.y;
   });

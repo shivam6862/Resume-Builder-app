@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Style from "../Styles/Resume.module.css";
 import SvgRefresh from "../Public/Svg";
+import { useLocationLocalStorage } from "../Hook/LocationLocalStorage";
+import useGenerateResume from "../Hook/useGenerateResume";
 
 const Pdf: React.FC = () => {
-  const URLRESUME =
-    "http://localhost:8080/393a6fb2-7177-4c3a-9905-1cb62a36bd7b.pdf";
+  const [URLRESUME, setURLRESUME] = useState<string>("");
+  const { GenerateResume } = useGenerateResume();
+  useEffect(() => {
+    const callingBacendForResumecreation = async () => {
+      const { fetchPersonalDetails } = useLocationLocalStorage();
+      const userId = fetchPersonalDetails().id;
+      const response = await GenerateResume(userId);
+      const urlresume = `http://localhost:8080/${userId}.pdf`;
+      setURLRESUME(urlresume);
+    };
+    callingBacendForResumecreation();
+  }, []);
   return (
     <div className={Style.container_PDFPart}>
       <div className={Style.refresh}>

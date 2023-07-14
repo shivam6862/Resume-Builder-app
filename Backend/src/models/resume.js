@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const v4 = require("uuid").v4;
 
 const { Schema } = mongoose;
 
@@ -15,13 +14,9 @@ const resumeSchema = new Schema({
     },
     semester: {
       type: String,
-      trim: true,
-      required: [true, "Semester required!"],
     },
     branch: {
       type: String,
-      trim: true,
-      required: [true, "Branch required!"],
     },
     number: {
       type: String,
@@ -35,20 +30,24 @@ const resumeSchema = new Schema({
     },
     registration: {
       type: String,
-      trim: true,
-      required: [true, "Registration required!"],
+    },
+    college: {
+      type: String,
     },
   },
   college: {
     type: String,
-    trim: true,
-    required: [true, "College is required!"],
   },
-  aoi: {
-    type: String,
-    trim: true,
-    required: [true, "Area of Interest is required!"],
-  },
+  aoi: [
+    {
+      item: {
+        type: String,
+        trim: true,
+        required: [true, "Area of Interest is required!"],
+      },
+      id: { type: String },
+    },
+  ],
   education: [
     {
       year: {
@@ -61,6 +60,9 @@ const resumeSchema = new Schema({
         trim: true,
         required: [true, "Degree required!"],
       },
+      field: {
+        type: String,
+      },
       institution: {
         type: String,
         trim: true,
@@ -71,9 +73,73 @@ const resumeSchema = new Schema({
         trim: true,
         required: [true, "Cgpa required!"],
       },
+      graduation: {
+        type: String,
+      },
       id: {
         type: String,
-        default: v4(),
+      },
+    },
+  ],
+  InternshipDetails: [
+    {
+      Company: {
+        type: String,
+        trim: true,
+        required: [true, "Company required!"],
+      },
+      Title: {
+        type: String,
+        trim: true,
+        required: [true, "Title required!"],
+      },
+      Description: [
+        {
+          type: String,
+        },
+      ],
+      StartDate: {
+        type: String,
+        trim: true,
+        required: [true, "StartDate required!"],
+      },
+      EndDate: {
+        type: String,
+        trim: true,
+      },
+      id: {
+        type: String,
+      },
+    },
+  ],
+  JobExperience: [
+    {
+      Position: {
+        type: String,
+        trim: true,
+        required: [true, "Position required!"],
+      },
+      Organisation: {
+        type: String,
+        trim: true,
+        required: [true, "Organisation required!"],
+      },
+      Description: [
+        {
+          type: String,
+        },
+      ],
+      StartDate: {
+        type: String,
+        trim: true,
+        required: [true, "StartDate required!"],
+      },
+      EndDate: {
+        type: String,
+        trim: true,
+      },
+      id: {
+        type: String,
       },
     },
   ],
@@ -97,27 +163,33 @@ const resumeSchema = new Schema({
       description: [
         {
           type: String,
-          trim: true,
-          required: [true, "description required!"],
         },
       ],
+      StartDate: {
+        type: String,
+        trim: true,
+        required: [true, "StartDate required!"],
+      },
+      EndDate: {
+        type: String,
+        trim: true,
+      },
       id: {
         type: String,
-        default: v4(),
       },
     },
   ],
   asaa: [
     {
       item: { type: String, trim: true },
-      id: { type: String, default: v4() },
+      id: { type: String },
     },
   ],
   skills: {
-    computerLanguages: { type: String, trim: true },
-    softwarePackages: { type: String, trim: true },
-    additionalCourses: { type: String, trim: true },
-    languagesKnown: { type: String, trim: true },
+    computerLanguages: { type: String },
+    softwarePackages: { type: String },
+    additionalCourses: { type: String },
+    languagesKnown: { type: String },
   },
   poraec: [
     {
@@ -145,9 +217,37 @@ const resumeSchema = new Schema({
       ],
       id: {
         type: String,
-        default: v4(),
       },
     },
+  ],
+  Publications: [
+    {
+      Title: { type: String, trim: true, required: [true, "Title required!"] },
+      Authors: {
+        type: String,
+        trim: true,
+        required: [true, "Authors required!"],
+      },
+      Publisher: {
+        type: String,
+        trim: true,
+        required: [true, "Publisher required!"],
+      },
+      Year: { type: String, trim: true, required: [true, "Year required!"] },
+      Pages: { type: String, trim: true, required: [true, "Pages required!"] },
+      Volumes: {
+        type: String,
+        trim: true,
+        required: [true, "Volumes required!"],
+      },
+      Journal: {
+        type: String,
+        trim: true,
+        required: [true, "Journal required!"],
+      },
+      id: { type: String },
+    },
+    1,
   ],
   references: [
     {
@@ -156,7 +256,7 @@ const resumeSchema = new Schema({
       collegeCompanies: { type: String, trim: true },
       email: { type: String, trim: true },
       number: { type: String, trim: true },
-      id: { type: String, default: v4() },
+      id: { type: String },
     },
   ],
 });
