@@ -32,7 +32,13 @@ const ProjectsItem: React.FC<ProjectsItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={name} id={id} page={"projects"} where={"name"} />
+            <InputArea
+              type="text"
+              value={name}
+              id={id}
+              page={"projects"}
+              where={"name"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -42,6 +48,7 @@ const ProjectsItem: React.FC<ProjectsItemProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={under}
               id={id}
               page={"projects"}
@@ -56,6 +63,7 @@ const ProjectsItem: React.FC<ProjectsItemProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={description}
               id={id}
               page={"projects"}
@@ -78,7 +86,13 @@ const ProjectsItem: React.FC<ProjectsItemProps> = ({
             <div style={{ width: "-webkit-fill-available" }}>
               <div className={classes.container}>
                 <div className={classes.input}>
-                  <input type="date" value={startDate} id={id} />
+                  <InputArea
+                    type="date"
+                    value={startDate}
+                    id={id}
+                    page={"projects"}
+                    where={"startDate"}
+                  />
                 </div>
               </div>
             </div>
@@ -88,7 +102,13 @@ const ProjectsItem: React.FC<ProjectsItemProps> = ({
             <div style={{ width: "-webkit-fill-available" }}>
               <div className={classes.container}>
                 <div className={classes.input}>
-                  <input type="date" value={endDate} id={id} />
+                  <InputArea
+                    type="date"
+                    value={endDate}
+                    id={id}
+                    page={"projects"}
+                    where={"endDate"}
+                  />
                 </div>
               </div>
             </div>

@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = general = (userid, general, college, pdfDoc) => {
   const user_image = path.join("src", "uploads", `${userid}.png`);
-  const college_logo = path.join("src", "uploads", "college.png");
+  const college_logo = path.join("src", "image", "college.png");
   const logoWidth = 60;
   const logoHeight = 60;
   const logoWidthCollege = 50;
@@ -16,7 +16,7 @@ module.exports = general = (userid, general, college, pdfDoc) => {
         align: "left",
       });
   } catch (err) {
-    const dummyImage = path.join("src", "uploads", `user.jpeg`);
+    const dummyImage = path.join("src", "image", `user.jpeg`);
     pdfDoc
       .fontSize(11)
       .image(dummyImage, pdfDoc.page.margins.left, pdfDoc.page.margins.top, {

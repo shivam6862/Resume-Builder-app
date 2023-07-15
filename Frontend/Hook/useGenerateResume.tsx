@@ -12,8 +12,8 @@ const useGenerateResume = () => {
         },
       });
       const responsedata = await response.json();
-      console.log(responsedata);
-      return "Success";
+      NotificationHook(responsedata.message, responsedata.type);
+      return responsedata.response;
     } catch (err) {
       console.log(err);
       NotificationHook("Check your connection!", "Error");

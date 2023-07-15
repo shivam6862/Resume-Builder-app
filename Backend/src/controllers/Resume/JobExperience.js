@@ -1,3 +1,5 @@
+const changeDate = require("./ChangeDate");
+
 module.exports = JobExperience = (projects, pdfDoc) => {
   pdfDoc.moveDown(0.25);
   const ProjectsX = pdfDoc.page.margins.left;
@@ -23,9 +25,14 @@ module.exports = JobExperience = (projects, pdfDoc) => {
     pdfDoc
       .font("Helvetica")
       .fontSize(9)
-      .text(project.StartDate + "  " + project.EndDate, ProjectsX, ProjectsY, {
-        align: "right",
-      });
+      .text(
+        changeDate(project.startDate) + " - " + changeDate(project.endDate),
+        ProjectsX,
+        ProjectsY,
+        {
+          align: "right",
+        }
+      );
     pdfDoc.moveDown(0.2);
     pdfDoc
       .font("Helvetica")

@@ -17,16 +17,16 @@ interface UserInternshipDetails {
   Company: string;
   Title: string;
   Description: string;
-  StartDate: string;
-  EndDate: string;
+  startDate: string;
+  endDate: string;
   id: string;
 }
 interface UserJobExperience {
   Position: string;
   Organisation: string;
   Description: string;
-  StartDate: string;
-  EndDate: string;
+  startDate: string;
+  endDate: string;
   id: string;
 }
 interface UserProject {
@@ -49,7 +49,8 @@ interface UserAsaa {
 interface UserPoraeC {
   name: string;
   under: string;
-  time: string;
+  startDate: string;
+  endDate: string;
   description: string;
   id: string;
 }
@@ -128,8 +129,8 @@ const initialState: ResumeInterfaceState = {
       Company: "",
       Title: "",
       Description: "",
-      StartDate: "",
-      EndDate: "",
+      startDate: "",
+      endDate: "",
       id: uuidv4(),
     },
   ],
@@ -138,8 +139,8 @@ const initialState: ResumeInterfaceState = {
       Position: "",
       Organisation: "",
       Description: "",
-      StartDate: "",
-      EndDate: "",
+      startDate: "",
+      endDate: "",
       id: uuidv4(),
     },
   ],
@@ -170,7 +171,8 @@ const initialState: ResumeInterfaceState = {
     {
       name: "",
       under: "",
-      time: "",
+      startDate: "",
+      endDate: "",
       description: "",
       id: uuidv4(),
     },

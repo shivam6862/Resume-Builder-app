@@ -3,10 +3,12 @@ const routes = require("./routes");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
+const fileUpload = require("express-fileupload");
 
 const app = express();
 
 app.use(express.static(__dirname + "/uploads/"));
+app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

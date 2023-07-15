@@ -17,8 +17,8 @@ const InternshipDetails: React.FC = () => {
           title={item.Title}
           company={item.Company}
           description={item.Description}
-          startDate={item.StartDate}
-          endDate={item.EndDate}
+          startDate={item.startDate}
+          endDate={item.endDate}
           id={item.id}
           key={item.id}
         />

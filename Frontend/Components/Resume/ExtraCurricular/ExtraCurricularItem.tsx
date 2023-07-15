@@ -8,7 +8,8 @@ interface ExtraCurricularItemProps {
   name: string;
   under: string;
   description: string;
-  time: string;
+  startDate: string;
+  endDate: string;
   id: string;
 }
 
@@ -16,7 +17,8 @@ const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
   name,
   under,
   description,
-  time,
+  startDate,
+  endDate,
   id,
 }) => {
   return (
@@ -28,7 +30,13 @@ const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={name} id={id} page={"poraec"} where={"name"} />
+            <InputArea
+              type="text"
+              value={name}
+              id={id}
+              page={"poraec"}
+              where={"name"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -37,7 +45,13 @@ const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
             <div className={Style.compulsory}>*</div>
           </div>
           <div className={Style.input}>
-            <InputArea value={under} id={id} page={"poraec"} where={"under"} />
+            <InputArea
+              type="text"
+              value={under}
+              id={id}
+              page={"poraec"}
+              where={"under"}
+            />
           </div>
         </div>
         <div className={Style.combine_Item}>
@@ -47,6 +61,7 @@ const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={description}
               id={id}
               page={"poraec"}
@@ -69,7 +84,14 @@ const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
             <div style={{ width: "-webkit-fill-available" }}>
               <div className={classes.container}>
                 <div className={classes.input}>
-                  <input type="date" value={time} />
+                  {/* <input type="date" value={time} /> */}
+                  <InputArea
+                    type="date"
+                    value={startDate}
+                    id={id}
+                    page={"poraec"}
+                    where={"startDate"}
+                  />
                 </div>
               </div>
             </div>
@@ -79,7 +101,13 @@ const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
             <div style={{ width: "-webkit-fill-available" }}>
               <div className={classes.container}>
                 <div className={classes.input}>
-                  <input type="date" />
+                  <InputArea
+                    type="date"
+                    value={endDate}
+                    id={id}
+                    page={"poraec"}
+                    where={"endDate"}
+                  />
                 </div>
               </div>
             </div>

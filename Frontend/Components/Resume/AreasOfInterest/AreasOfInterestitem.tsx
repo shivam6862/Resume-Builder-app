@@ -17,7 +17,13 @@ const AreasOfInterestitem: React.FC<AreaOfInterestItemProps> = ({
       <div className={Style.box_item}>
         <div className={Style.achievement}>Areas Of Interest</div>
         <div className={Style.input}>
-          <InputArea value={item} id={id} page={"aoi"} where={"item"} />
+          <InputArea
+            type="text"
+            value={item}
+            id={id}
+            page={"aoi"}
+            where={"item"}
+          />
         </div>
         <div className={Style.submit}>
           <SaveButton page={"Areas of interest"} findIn={"aoi"} id={id} />

@@ -33,6 +33,7 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={title}
               id={id}
               page={"Publications"}
@@ -46,6 +47,7 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={authors}
               id={id}
               page={"Publications"}
@@ -59,6 +61,7 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={publisher}
               id={id}
               page={"Publications"}
@@ -72,6 +75,7 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={year}
               id={id}
               page={"Publications"}
@@ -85,6 +89,7 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={pages}
               id={id}
               page={"Publications"}
@@ -98,6 +103,7 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={volumes}
               id={id}
               page={"Publications"}
@@ -111,6 +117,7 @@ const PublicationsItem: React.FC<JobExperiencesProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={journal}
               id={id}
               page={"Publications"}

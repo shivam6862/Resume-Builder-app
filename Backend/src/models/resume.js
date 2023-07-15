@@ -98,12 +98,12 @@ const resumeSchema = new Schema({
           type: String,
         },
       ],
-      StartDate: {
+      startDate: {
         type: String,
         trim: true,
         required: [true, "StartDate required!"],
       },
-      EndDate: {
+      endDate: {
         type: String,
         trim: true,
       },
@@ -129,12 +129,12 @@ const resumeSchema = new Schema({
           type: String,
         },
       ],
-      StartDate: {
+      startDate: {
         type: String,
         trim: true,
         required: [true, "StartDate required!"],
       },
-      EndDate: {
+      endDate: {
         type: String,
         trim: true,
       },
@@ -165,12 +165,12 @@ const resumeSchema = new Schema({
           type: String,
         },
       ],
-      StartDate: {
+      startDate: {
         type: String,
         trim: true,
         required: [true, "StartDate required!"],
       },
-      EndDate: {
+      endDate: {
         type: String,
         trim: true,
       },
@@ -203,10 +203,14 @@ const resumeSchema = new Schema({
         trim: true,
         required: [true, "under required!"],
       },
-      time: {
+      startDate: {
         type: String,
         trim: true,
-        required: [true, "Time required!"],
+        required: [true, "StartDate required!"],
+      },
+      endDate: {
+        type: String,
+        trim: true,
       },
       description: [
         {

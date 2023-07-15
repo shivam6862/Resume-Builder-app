@@ -31,6 +31,7 @@ const InternshipDetailsItem: React.FC<InternshipDetailsProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={company}
               id={id}
               page={"InternshipDetails"}
@@ -45,6 +46,7 @@ const InternshipDetailsItem: React.FC<InternshipDetailsProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={title}
               id={id}
               page={"InternshipDetails"}
@@ -56,6 +58,7 @@ const InternshipDetailsItem: React.FC<InternshipDetailsProps> = ({
           <div className={Style.achievement}>Description</div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={description}
               id={id}
               page={"InternshipDetails"}
@@ -78,7 +81,13 @@ const InternshipDetailsItem: React.FC<InternshipDetailsProps> = ({
             <div style={{ width: "-webkit-fill-available" }}>
               <div className={classes.container}>
                 <div className={classes.input}>
-                  <input type="date" value={startDate} id={id} />
+                  <InputArea
+                    type="date"
+                    value={startDate}
+                    id={id}
+                    page={"InternshipDetails"}
+                    where={"startDate"}
+                  />
                 </div>
               </div>
             </div>
@@ -88,7 +97,13 @@ const InternshipDetailsItem: React.FC<InternshipDetailsProps> = ({
             <div style={{ width: "-webkit-fill-available" }}>
               <div className={classes.container}>
                 <div className={classes.input}>
-                  <input type="date" value={endDate} id={id} />
+                  <InputArea
+                    type="date"
+                    value={endDate}
+                    id={id}
+                    page={"InternshipDetails"}
+                    where={"endDate"}
+                  />
                 </div>
               </div>
             </div>

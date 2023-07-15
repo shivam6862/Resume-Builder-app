@@ -29,6 +29,7 @@ const ReferenceItem: React.FC<ReferenceItemProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={name}
               id={id}
               page={"references"}
@@ -42,6 +43,7 @@ const ReferenceItem: React.FC<ReferenceItemProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={work}
               id={id}
               page={"references"}
@@ -55,6 +57,7 @@ const ReferenceItem: React.FC<ReferenceItemProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={collegeCompanies}
               id={id}
               page={"references"}
@@ -68,6 +71,7 @@ const ReferenceItem: React.FC<ReferenceItemProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={number}
               id={id}
               page={"references"}
@@ -81,6 +85,7 @@ const ReferenceItem: React.FC<ReferenceItemProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={email}
               id={id}
               page={"references"}

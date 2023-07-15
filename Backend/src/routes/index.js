@@ -7,6 +7,7 @@ const getSigninRoute = require("../routes/Auth/getSigninRoute");
 const resetPasswordRoutes = require("../routes/Auth/resetPasswordRoutes");
 const getNewPasswordRoutes = require("../routes/Auth/getNewPasswordRoutes");
 const insertnewPasswordRoutes = require("../routes/Auth/insertnewPasswordRoutes");
+const insertUserImage = require("../routes/insertUserImage");
 
 module.exports = routes = [
   getUserRoutes,
@@ -18,4 +19,5 @@ module.exports = routes = [
   resetPasswordRoutes,
   getNewPasswordRoutes,
   insertnewPasswordRoutes,
+  insertUserImage,
 ];

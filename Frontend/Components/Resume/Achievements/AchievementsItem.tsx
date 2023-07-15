@@ -17,7 +17,13 @@ const AchievementsItem: React.FC<AchievementsItemProps> = ({ item, id }) => {
           <div className={Style.compulsory}>*</div>
         </div>
         <div className={Style.input}>
-          <InputArea value={item} id={id} page={"asaa"} where={"item"} />
+          <InputArea
+            type="text"
+            value={item}
+            id={id}
+            page={"asaa"}
+            where={"item"}
+          />
         </div>
         <div className={Style.submit}>
           <SaveButton page={"Achievements"} findIn={"asaa"} id={id} />

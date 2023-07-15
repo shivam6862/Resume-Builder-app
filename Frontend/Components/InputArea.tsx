@@ -8,9 +8,16 @@ interface InputAreaProps {
   id: string;
   page: string;
   where: string;
+  type: string;
 }
 
-const InputArea: React.FC<InputAreaProps> = ({ value, id, page, where }) => {
+const InputArea: React.FC<InputAreaProps> = ({
+  value,
+  id,
+  page,
+  where,
+  type,
+}) => {
   const dispatch = useDispatch();
   var data = useSelector((state: any) => state.userResume[page]);
   const updateUserResume = (value: string) => {
@@ -33,7 +40,7 @@ const InputArea: React.FC<InputAreaProps> = ({ value, id, page, where }) => {
     <div className={Style.container}>
       <div className={Style.input}>
         <input
-          type="text"
+          type={type}
           value={value}
           onChange={(e) => updateUserResume(e.target.value)}
         />

@@ -113,17 +113,3 @@
   gap: 0.3rem;
   cursor: pointer;
 }
-.refreshText:hover .SvgHover {
-  animation: animate 1s linear 2;
-}
-.SvgHover:hover {
-  animation: animate 1s linear 2;
-}
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}

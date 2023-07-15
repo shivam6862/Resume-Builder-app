@@ -1,0 +1,43 @@
+.file_input_wrapper {
+  position: relative;
+  padding-left: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: -webkit-fill-available;
+  cursor: pointer;
+}
+.file_input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.part1_b_a {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 1px solid #2185d0;
+}
+.part1_b_a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.file_input_label {
+  display: inline-block;
+  color: #2185d0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.svgsave {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

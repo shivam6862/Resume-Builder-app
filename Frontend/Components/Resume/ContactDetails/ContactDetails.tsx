@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Style from "../../../Styles/Resume.module.css";
 import Heading from "../Heading/Heading";
 import InputArea from "../../InputArea";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../Store/store";
 import SaveButton from "../../SaveButton";
+import UploadImage from "../../UploadImage";
 
 interface ContactDetailsProps {
   general: {
@@ -36,6 +37,7 @@ const ContactDetails: React.FC = () => {
       <Heading heading="Contact Details" />
       <div className={Style.container_item}>
         <div className={Style.box_item}>
+          <UploadImage />
           {Object.entries(ContactDetailsData).map(([key, value]) => (
             <div className={Style.combine_Item} key={key}>
               <div className={Style.achievement}>
@@ -47,6 +49,7 @@ const ContactDetails: React.FC = () => {
               </div>
               <div className={Style.input}>
                 <InputArea
+                  type="text"
                   value={value}
                   id={key}
                   page={"general"}

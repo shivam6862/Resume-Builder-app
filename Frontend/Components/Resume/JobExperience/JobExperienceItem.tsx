@@ -31,6 +31,7 @@ const JobExperienceItem: React.FC<JobExperiencesProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={position}
               id={id}
               page={"JobExperience"}
@@ -45,6 +46,7 @@ const JobExperienceItem: React.FC<JobExperiencesProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={organisation}
               id={id}
               page={"JobExperience"}
@@ -59,6 +61,7 @@ const JobExperienceItem: React.FC<JobExperiencesProps> = ({
           </div>
           <div className={Style.input}>
             <InputArea
+              type="text"
               value={description}
               id={id}
               page={"JobExperience"}
@@ -81,7 +84,13 @@ const JobExperienceItem: React.FC<JobExperiencesProps> = ({
             <div style={{ width: "-webkit-fill-available" }}>
               <div className={classes.container}>
                 <div className={classes.input}>
-                  <input type="date" value={startDate} id={id} />
+                  <InputArea
+                    type="date"
+                    value={startDate}
+                    id={id}
+                    page={"JobExperience"}
+                    where={"startDate"}
+                  />
                 </div>
               </div>
             </div>
@@ -91,7 +100,13 @@ const JobExperienceItem: React.FC<JobExperiencesProps> = ({
             <div style={{ width: "-webkit-fill-available" }}>
               <div className={classes.container}>
                 <div className={classes.input}>
-                  <input type="date" value={endDate} id={id} />
+                  <InputArea
+                    type="date"
+                    value={endDate}
+                    id={id}
+                    page={"JobExperience"}
+                    where={"endDate"}
+                  />
                 </div>
               </div>
             </div>

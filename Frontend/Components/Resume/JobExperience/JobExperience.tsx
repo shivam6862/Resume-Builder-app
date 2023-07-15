@@ -17,8 +17,8 @@ const JobExperience: React.FC = () => {
           position={item.Position}
           organisation={item.Organisation}
           description={item.Description}
-          startDate={item.StartDate}
-          endDate={item.EndDate}
+          startDate={item.startDate}
+          endDate={item.endDate}
           id={item.id}
           key={item.id}
         />

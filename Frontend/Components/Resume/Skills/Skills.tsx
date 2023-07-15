@@ -35,7 +35,13 @@ const Skills: React.FC = () => {
                 {SkillsDataHeading[key as keyof typeof SkillsDataHeading]}
               </div>
               <div className={Style.input}>
-                <InputArea value={value} id={key} page={"skills"} where={key} />
+                <InputArea
+                  type="text"
+                  value={value}
+                  id={key}
+                  page={"skills"}
+                  where={key}
+                />
               </div>
             </div>
           ))}

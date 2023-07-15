@@ -16,7 +16,8 @@ const ExtraCurricular: React.FC = () => {
         <ExtraCurricularItem
           description={item.description}
           name={item.name}
-          time={item.time}
+          startDate={item.startDate}
+          endDate={item.endDate}
           under={item.under}
           id={item.id}
           key={item.id}
