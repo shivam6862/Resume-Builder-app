@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from "react";
-import classes from "../Styles/UploadImage.module.css";
 import SvgSave from "../Public/SvgSave";
+import classes from "../Styles/UploadImage.module.css";
 import { useLocationLocalStorage } from "../Hook/LocationLocalStorage";
 
 const UploadImage: React.FC = () => {
@@ -9,6 +9,7 @@ const UploadImage: React.FC = () => {
   const [setImageToBackend, setsetImageToBackend] = useState<
     File | undefined
   >();
+
   const handleFileUpload = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     const reader = new FileReader();
@@ -20,6 +21,7 @@ const UploadImage: React.FC = () => {
       reader.readAsDataURL(file);
     }
   };
+
   const saveImage = async (): Promise<any> => {
     if (selectedImage == null) return;
     console.log(setImageToBackend);
@@ -43,6 +45,7 @@ const UploadImage: React.FC = () => {
       console.log(err);
     }
   };
+
   return (
     <div className={classes.file_input_wrapper}>
       <input

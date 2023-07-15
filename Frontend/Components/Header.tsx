@@ -15,6 +15,7 @@ const Header: React.FC = () => {
   const { fetchPersonalDetails, removePersonalDetails } =
     useLocationLocalStorage();
   const [user, setUser] = useState<string | null>(null);
+
   useEffect(() => {
     const user = fetchPersonalDetails();
     if (user != undefined) {

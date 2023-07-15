@@ -13,7 +13,7 @@
   margin: 0;
   text-align: left;
   font-size: 2rem;
-  color: #2185d0;
+  color: var(--primary-color);
 }
 .button {
   display: flex;
@@ -21,7 +21,7 @@
   justify-content: center;
   align-items: center;
   padding: 0.4rem 0.4rem;
-  border: 2px solid #2185d0;
+  border: 2px solid var(--primary-color);
   border-radius: 0.5rem;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
@@ -32,10 +32,10 @@
   position: absolute;
   right: 4rem;
   top: 4.3rem;
-  border: 1px solid #2185d0;
+  border: 1px solid var(--primary-color);
   padding: 0.1rem 0.7rem;
   border-radius: 0.2rem;
-  color: #2185d0;
+  color: var(--primary-color);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
@@ -48,7 +48,7 @@
   justify-content: center;
   align-items: center;
   padding: 0.4rem;
-  border: 2px solid #2185d0;
+  border: 2px solid var(--primary-color);
   border-radius: 0.5rem;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
@@ -60,7 +60,7 @@
   justify-content: center;
   align-items: center;
   padding: 0.4rem;
-  border: 2px solid #2185d0;
+  border: 2px solid var(--primary-color);
   border-radius: 0.5rem;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
@@ -71,10 +71,10 @@
   position: absolute;
   right: 4rem;
   top: 1.5rem;
-  border: 1px solid #2185d0;
+  border: 1px solid var(--primary-color);
   padding: 0.1rem 1.5rem;
   border-radius: 0.2rem;
-  color: #2185d0;
+  color: var(--primary-color);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }

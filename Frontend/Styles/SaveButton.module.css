@@ -16,7 +16,7 @@
   text-align: center;
 }
 .button {
-  --COLOR_BODY: #2185d0;
+  --COLOR_BODY: var(--primary-color);
   color: var(--COLOR_BODY);
   border: 2px solid var(--COLOR_BODY);
 }

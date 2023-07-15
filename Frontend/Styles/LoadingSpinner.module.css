@@ -23,7 +23,7 @@
   font-size: 1rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  text-shadow: 0 0 5px #2185d0;
+  text-shadow: 0 0 5px var(--primary-color);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   background: linear-gradient(45deg, #000000, #2185d0);
   -webkit-background-clip: text;
@@ -37,8 +37,8 @@
   width: 100%;
   height: 100%;
   border: 3px solid transparent;
-  border-top: 3px solid #2185d0;
-  border-right: 3px solid #2185d0;
+  border-top: 3px solid var(--primary-color);
+  border-right: 3px solid var(--primary-color);
   border-radius: 50%;
   animation: animateC 2s linear infinite;
 }
@@ -59,10 +59,10 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #2185d0;
+  background: var(--primary-color);
   top: -6px;
   right: -8px;
-  box-shadow: 0 0 20px #2185d0;
+  box-shadow: 0 0 20px var(--primary-color);
 }
 @keyframes animateC {
   0% {

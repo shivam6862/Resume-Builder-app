@@ -31,12 +31,12 @@
   padding: 0;
   margin: 0;
   font-size: 1.75rem;
-  color: #2185d0;
+  color: var(--primary-color);
 }
 .heading_heading::before {
   content: "•";
   font-size: 1.75rem;
-  color: #2185d0;
+  color: var(--primary-color);
   margin-right: 0.2rem;
 }
 .container_item {
@@ -49,7 +49,7 @@
   width: 80%;
   padding-top: 1rem;
   margin-top: 1rem;
-  border-top: 2px solid #2185d0;
+  border-top: 2px solid var(--primary-color);
 }
 .box_item {
   display: flex;
@@ -105,7 +105,7 @@
   width: -webkit-fill-available;
   padding-right: 1rem;
   font-size: 1.35rem;
-  color: #2185d0;
+  color: var(--primary-color);
 }
 .refreshText {
   display: flex;

@@ -20,7 +20,7 @@
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  border: 1px solid #2185d0;
+  border: 1px solid var(--primary-color);
 }
 .part1_b_a img {
   width: 100%;
@@ -29,7 +29,7 @@
 }
 .file_input_label {
   display: inline-block;
-  color: #2185d0;
+  color: var(--primary-color);
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;

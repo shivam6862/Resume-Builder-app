@@ -35,6 +35,7 @@ const Resume: React.FC<CurrentProps> = ({ current }) => {
     { Component: Reference },
   ];
   const CurrentComponent = ResumePages[current]?.Component;
+
   return (
     <div className={Style.container_Resume}>
       {CurrentComponent && <CurrentComponent />}

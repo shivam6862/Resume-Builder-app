@@ -56,7 +56,7 @@
   padding: 0;
   margin: 0;
   cursor: pointer;
-  color: #2185d0;
+  color: var(--primary-color);
 }
 .part1_left p span {
   color: black;
@@ -110,13 +110,13 @@
   padding: 0 2rem;
   letter-spacing: 0;
   color: #fff;
-  background-color: #2185d0;
+  background-color: var(--primary-color);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
   text-transform: uppercase;
 }
 .privacy_policy {
   font-size: 0.8rem;
-  color: #2185d0;
+  color: var(--primary-color);
   margin-top: 6px;
   font-weight: 500;
 }
@@ -124,7 +124,7 @@
   width: -webkit-fill-available;
   text-align: right;
   padding-top: 0.5rem;
-  color: #2185d0;
+  color: var(--primary-color);
   cursor: pointer;
 }
 .forgotPassord:hover {
@@ -153,7 +153,7 @@
 .wronguser {
   text-align: center;
   font-size: 2rem;
-  color: #2185d0;
+  color: var(--primary-color);
   box-shadow: #06182c66 0 0 0 2px, #06182ca6 0 4px 6px -1px,
     #ffffff14 0 1px inset;
   padding: 2rem;

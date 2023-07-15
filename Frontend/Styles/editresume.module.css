@@ -35,6 +35,6 @@
     flex-direction: column;
   }
   .right {
-    border-top: 2px solid #2185d0;
+    border-top: 2px solid var(--primary-color);
   }
 }

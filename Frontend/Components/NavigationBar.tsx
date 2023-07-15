@@ -26,6 +26,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
   const HandleNavigation = (current: number) => {
     setCurrent(current);
   };
+
   return (
     <div className={Style.container}>
       <div className={Style.box}>

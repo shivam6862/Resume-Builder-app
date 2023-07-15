@@ -1,11 +1,11 @@
-import { useRouter } from "next/router";
 import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import { useRouter } from "next/router";
+import { useNotification } from "../../Hook/useNotification";
 import classes from "../../Styles/Auth.module.css";
 import useAuth from "../../Hook/useAuth";
 import SvgOpen from "../../Public/SvgOpen";
 import SvgClosed from "../../Public/SvgClosed";
 import LoadingSpinner from "../../Components/LoadingSpinner";
-import { useNotification } from "../../Hook/useNotification";
 
 interface Values {
   email: string;
@@ -13,12 +13,12 @@ interface Values {
   open: boolean;
   error: string;
 }
-
 interface backendUser {
   email: string;
   userId: string;
   passwordToken: string;
 }
+
 const resetpassword = () => {
   const router = useRouter();
   const { token } = router.query;
@@ -29,6 +29,7 @@ const resetpassword = () => {
     userId: "",
     passwordToken: "",
   });
+
   useEffect(() => {
     const callFunction = async () => {
       try {
@@ -60,7 +61,9 @@ const resetpassword = () => {
     };
     if (token) callFunction();
   }, [token]);
+
   const { Auth } = useAuth();
+
   const [values, setValues] = useState<Values>({
     email: "",
     password: "",

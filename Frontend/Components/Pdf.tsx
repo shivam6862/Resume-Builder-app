@@ -11,6 +11,7 @@ const Pdf: React.FC = () => {
   const [URLRESUME, setURLRESUME] = useState<string>("");
   const [refreshKey, setRefreshKey] = useState<number>(0);
   const { GenerateResume } = useGenerateResume();
+
   useEffect(() => {
     const callingBacendForResumecreation = async () => {
       const { fetchPersonalDetails } = useLocationLocalStorage();
@@ -29,12 +30,14 @@ const Pdf: React.FC = () => {
     };
     callingBacendForResumecreation();
   }, []);
+
   const refreshHandler = async () => {
     const response = await GenerateResume(URLRESUME);
     console.log(response);
     setURLRESUME((prevURL) => prevURL);
     setRefreshKey((prevKey) => prevKey + 1);
   };
+
   return (
     <div className={Style.container_PDFPart}>
       <div className={Style.refresh}>

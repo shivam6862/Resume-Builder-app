@@ -18,6 +18,7 @@ const Notification: React.FC<Notification> = ({ message, id, type }) => {
   const handleDeleteNotification = (id: string) => {
     dispatch(deleteMessage(id));
   };
+
   const handleStartTimer = () => {
     const id = setInterval(() => {
       setWidth((prev) => {
@@ -30,11 +31,13 @@ const Notification: React.FC<Notification> = ({ message, id, type }) => {
     }, 20);
     setIntervalId(id);
   };
+
   const handlePauseTimer = () => {
     if (intervalId) {
       clearInterval(intervalId);
     }
   };
+
   useEffect(() => {
     if (width === 100) {
       handlePauseTimer();

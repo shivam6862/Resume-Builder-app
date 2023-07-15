@@ -8,6 +8,7 @@ const Notifications: React.FC = () => {
   const typeMessage = useSelector(
     (state: RootState) => state.notification.typeMessage
   );
+
   return (
     <div className={`${Styles.container} ${Styles.buttomright_1}`}>
       {typeMessage.map((message, index) => (

@@ -23,3 +23,6 @@ p {
   padding: 0;
   margin: 0;
 }
+:root {
+  --primary-color: #2185d0;
+}

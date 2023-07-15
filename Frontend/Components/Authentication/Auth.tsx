@@ -9,6 +9,7 @@ import AuthenticationContext from "../../Store/Authentication-context";
 const Auth = () => {
   const AuthenticationCtx = useContext(AuthenticationContext);
   const open = AuthenticationCtx.open;
+
   return (
     <div className={classes.Auth_container}>
       {(open.signupOpen || open.ResetPasswordOpen || open.LogInOpen) && (

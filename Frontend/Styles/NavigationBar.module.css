@@ -6,7 +6,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: -webkit-fill-available;
-  border-top: 2px solid #2185d0;
+  border-top: 2px solid var(--primary-color);
   border-bottom: 2px solid #8c8c8c;
 }
 .box {
@@ -29,8 +29,8 @@
   min-height: 2.7rem;
 }
 .item:hover {
-  color: #2185d0;
-  border-bottom: 2.5px solid #2185d0;
+  color: var(--primary-color);
+  border-bottom: 2.5px solid var(--primary-color);
 }
 .active {
   padding: 0;
@@ -39,6 +39,6 @@
   cursor: pointer;
   padding: 0.6rem 0rem 0.6rem 0rem;
   min-height: 2.7rem;
-  color: #2185d0;
-  border-bottom: 2.5px solid #2185d0;
+  color: var(--primary-color);
+  border-bottom: 2.5px solid var(--primary-color);
 }

@@ -20,6 +20,7 @@ const InputArea: React.FC<InputAreaProps> = ({
 }) => {
   const dispatch = useDispatch();
   var data = useSelector((state: any) => state.userResume[page]);
+
   const updateUserResume = (value: string) => {
     var sendData;
     var updatedSendData;
@@ -36,6 +37,7 @@ const InputArea: React.FC<InputAreaProps> = ({
       })
     );
   };
+
   return (
     <div className={Style.container}>
       <div className={Style.input}>

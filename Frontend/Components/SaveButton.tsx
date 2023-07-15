@@ -1,8 +1,8 @@
 import React from "react";
 import Style from "../Styles/SaveButton.module.css";
 import { useSelector } from "react-redux";
-import useResumeSave from "../Hook/useResumeSave";
 import { useNotification } from "../Hook/useNotification";
+import useResumeSave from "../Hook/useResumeSave";
 
 interface SaveButtonProps {
   page: string;
@@ -14,6 +14,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({ page, findIn, id }) => {
   const { NotificationHook } = useNotification();
   const { ResumeSave } = useResumeSave();
   const data = useSelector((state: any) => state.userResume[findIn]);
+
   const handleaddNewNotification = async () => {
     var sendData;
     if (Array.isArray(data)) sendData = data.find((item: any) => item.id == id);
@@ -22,6 +23,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({ page, findIn, id }) => {
     if (response == "Success")
       NotificationHook(page + " submitted successfully!", "Success");
   };
+
   return (
     <div className={Style.container}>
       <div className={Style.button} onClick={handleaddNewNotification}>
