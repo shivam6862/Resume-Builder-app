@@ -3,8 +3,11 @@ import Style from "../Styles/Resume.module.css";
 import SvgRefresh from "../Public/Svg";
 import { useLocationLocalStorage } from "../Hook/LocationLocalStorage";
 import useGenerateResume from "../Hook/useGenerateResume";
+import { useDispatch, useSelector } from "react-redux";
+import { saveField } from "../Store/ResumeSlice";
 
 const Pdf: React.FC = () => {
+  const dispatch = useDispatch();
   const [URLRESUME, setURLRESUME] = useState<string>("");
   const [refreshKey, setRefreshKey] = useState<number>(0);
   const { GenerateResume } = useGenerateResume();
@@ -15,6 +18,14 @@ const Pdf: React.FC = () => {
       const response = await GenerateResume(userId);
       setURLRESUME(userId);
       setRefreshKey((prevKey) => prevKey + 1);
+      Object.entries(response).forEach(([key, value]) => {
+        dispatch(
+          saveField({
+            field: key,
+            data: value,
+          })
+        );
+      });
     };
     callingBacendForResumecreation();
   }, []);
@@ -36,7 +47,7 @@ const Pdf: React.FC = () => {
         key={refreshKey}
         src={`http://localhost:8080/${URLRESUME}.pdf`}
         width="100%"
-        height="500px"
+        height="600px"
         title="PDF Viewer"
       />
     </div>

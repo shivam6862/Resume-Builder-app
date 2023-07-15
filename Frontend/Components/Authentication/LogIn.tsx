@@ -36,7 +36,7 @@ const LogIn = () => {
       "signin"
     );
     if (response === "Success") {
-      AuthenticationCtx.setDetails(values.email, "", "");
+      AuthenticationCtx.setDetails("", "", values.email);
       AuthenticationCtx.onHide("all");
       setValues({ email: "", open: true, error: "", password: "" });
     }

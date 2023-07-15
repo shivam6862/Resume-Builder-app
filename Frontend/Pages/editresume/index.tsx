@@ -1,28 +1,44 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import styles from "../../Styles/editresume.module.css";
 import Header from "../../Components/Header";
 import NavigationBar from "../../Components/NavigationBar";
 import Resume from "../../Components/Resume";
 import Pdf from "../../Components/Pdf";
+import { useLocationLocalStorage } from "../../Hook/LocationLocalStorage";
+import { useRouter } from "next/router";
 
 const editresume: React.FC = () => {
+  const router = useRouter();
+  const { fetchPersonalDetails } = useLocationLocalStorage();
   const [current, setCurrent] = useState<number>(0);
+  const [islogin, setIslogin] = useState<Boolean>(false);
+  useEffect(() => {
+    const userDetails = fetchPersonalDetails();
+    if (userDetails == undefined || userDetails == null) {
+      router.push("/");
+    }
+    if (userDetails !== undefined && userDetails !== null) setIslogin(true);
+  }, []);
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/logo.png" />
       </Head>
       <Header />
-      <NavigationBar setCurrent={setCurrent} current={current} />
-      <div className={styles.editContainer}>
-        <div className={styles.left}>
-          <Resume current={current} />
-        </div>
-        <div className={styles.right}>
-          <Pdf />
-        </div>
-      </div>
+      {islogin && (
+        <>
+          <NavigationBar setCurrent={setCurrent} current={current} />
+          <div className={styles.editContainer}>
+            <div className={styles.left}>
+              <Resume current={current} />
+            </div>
+            <div className={styles.right}>
+              <Pdf />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

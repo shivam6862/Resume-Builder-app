@@ -3,7 +3,7 @@ import React from "react";
 const SvgOpen: React.FC = () => {
   return (
     <svg
-      fill="#000000"
+      fill="#2185d0"
       version="1.1"
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"

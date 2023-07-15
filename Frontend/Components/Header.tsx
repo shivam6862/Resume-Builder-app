@@ -5,6 +5,8 @@ import styles from "../Styles/Header.module.css";
 import Svgsign from "../Public/Svgsign";
 import { useRouter } from "next/router";
 import { useLocationLocalStorage } from "../Hook/LocationLocalStorage";
+import SvgLogOut from "../Public/SvgLogOut";
+import SvgEdit from "../Public/SvgEdit";
 
 const Header: React.FC = () => {
   const router = useRouter();
@@ -18,18 +20,21 @@ const Header: React.FC = () => {
     if (user != undefined) {
       setUser(user.email);
     }
-  }, []);
+  }, [user, authenticationContextCtx.details]);
+
   const logout = () => {
+    setUser(null);
     removePersonalDetails();
   };
+
   return (
     <div className={styles.container}>
       <Link className={styles.heading} href={"/"}>
-        Resume Builder
+        Resume Builder App
       </Link>
       {user == null && (
         <div
-          className={styles.right_part}
+          className={styles.right_part_1}
           onClick={() => {
             authenticationContextCtx.onShow("LogInOpen");
           }}
@@ -39,9 +44,10 @@ const Header: React.FC = () => {
       )}
       {user != null && (
         <div className={styles.right_part} onClick={logout}>
-          Log out
+          <SvgLogOut />
         </div>
       )}
+      <div className={styles.signouthover}>Sign out</div>
       {pathname === "/" && user != null && (
         <Link
           className={styles.button}
@@ -52,9 +58,10 @@ const Header: React.FC = () => {
             top: "4rem",
           }}
         >
-          Edit Resume
+          <SvgEdit />
         </Link>
       )}
+      <div className={styles.edithover}>Edit Resume</div>
     </div>
   );
 };

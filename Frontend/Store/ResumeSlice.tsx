@@ -6,24 +6,28 @@ const ResumeSlice = createSlice({
   initialState,
   reducers: {
     deleteField: (
-      state,
+      state: any,
       action: PayloadAction<{ field: string; id: string }>
     ) => {
       const { field, id } = action.payload;
-      state[field] = state[field].filter((item) => item.id !== id);
+      state[field] = state[field].filter((item: any) => item.id !== id);
     },
-    saveField: (state, action: PayloadAction<{ field: string; data: any }>) => {
+    saveField: (
+      state: any,
+      action: PayloadAction<{ field: string; data: any }>
+    ) => {
       let { field, data } = action.payload;
-      if (Array.isArray(state[field])) state[field] = [...state[field], data];
+      if (Array.isArray(state[field]))
+        state[field] = [...data, ...state[field]];
       else state[field] = data;
     },
     updateField: (
-      state,
+      state: any,
       action: PayloadAction<{ field: string; data: any }>
     ) => {
       const { field, data } = action.payload;
       if (Array.isArray(state[field])) {
-        state[field] = state[field].map((item) =>
+        state[field] = state[field].map((item: any) =>
           item.id === data.id ? data : item
         );
       } else if (typeof state[field] === "object") {
