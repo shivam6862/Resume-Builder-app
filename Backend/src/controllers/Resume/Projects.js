@@ -33,6 +33,19 @@ module.exports = Projects = (projects, pdfDoc) => {
           align: "right",
         }
       );
+
+    var sentences = project.description[0].split(".");
+    var filteredSentences = sentences.filter(
+      (sentence) => sentence.trim().length > 0
+    );
+    for (var i = 0; i < filteredSentences.length; i++) {
+      if (filteredSentences[i][0] === " ") {
+        filteredSentences[i] = filteredSentences[i].slice(1);
+      }
+      filteredSentences[i] += ".";
+    }
+    project.description = filteredSentences;
+
     pdfDoc.moveDown(0.2);
     pdfDoc
       .font("Helvetica")
