@@ -8,7 +8,11 @@ import { useLocationLocalStorage } from "../Hook/LocationLocalStorage";
 import SvgLogOut from "../Public/SvgLogOut";
 import SvgEdit from "../Public/SvgEdit";
 
-const Header: React.FC = () => {
+interface setIsloginProps {
+  setIslogin?: (current: boolean) => void;
+}
+
+const Header: React.FC<setIsloginProps> = ({ setIslogin }) => {
   const router = useRouter();
   const { pathname } = router;
   const authenticationContextCtx = useContext(AuthenticationContext);
@@ -26,6 +30,7 @@ const Header: React.FC = () => {
   const logout = () => {
     setUser(null);
     removePersonalDetails();
+    if (setIslogin) setIslogin(false);
   };
 
   return (

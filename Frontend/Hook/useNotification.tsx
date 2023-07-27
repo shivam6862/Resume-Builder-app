@@ -4,7 +4,7 @@ import { addNewNotification } from "../Store/notificationSlice";
 export const useNotification = () => {
   const dispatch = useDispatch();
   const NotificationHook = (message: string, type: string) => {
-    dispatch(addNewNotification(message, type));
+    addNewNotification(message, type, dispatch);
   };
   return {
     NotificationHook,

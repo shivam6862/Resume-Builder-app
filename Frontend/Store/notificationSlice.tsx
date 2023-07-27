@@ -43,13 +43,16 @@ const notificationSlice = createSlice({
 
 export const { addMessage, deleteMessage } = notificationSlice.actions;
 export default notificationSlice.reducer;
-export const addNewNotification =
-  (message: string, type: string) => (dispatch: Dispatch) => {
-    const color: string = backGroundColor[type as keyof BackgroundColor];
-    const notification: Notification = {
-      message,
-      id: uuidv4(),
-      type: color,
-    };
-    dispatch(addMessage(notification));
+export const addNewNotification = (
+  message: string,
+  type: string,
+  dispatch: Dispatch
+) => {
+  const color: string = backGroundColor[type as keyof BackgroundColor];
+  const notification: Notification = {
+    message,
+    id: uuidv4(),
+    type: color,
   };
+  dispatch(addMessage(notification));
+};

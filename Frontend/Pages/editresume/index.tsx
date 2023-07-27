@@ -20,14 +20,14 @@ const editresume: React.FC = () => {
       router.push("/");
     }
     if (userDetails !== undefined && userDetails !== null) setIslogin(true);
-  }, []);
+  }, [islogin]);
 
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/logo.png" />
       </Head>
-      <Header />
+      <Header setIslogin={setIslogin} />
       {islogin && (
         <>
           <NavigationBar setCurrent={setCurrent} current={current} />
