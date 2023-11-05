@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useNotification } from "../../Hook/useNotification";
+import Head from "next/head";
 import classes from "../../Styles/Auth.module.css";
 import useAuth from "../../Hook/useAuth";
 import SvgOpen from "../../Public/SvgOpen";
@@ -94,6 +95,11 @@ const resetpassword = () => {
 
   return (
     <div className={classes.resetcontainer}>
+      <Head>
+        <link rel="icon" href="/logo.jpeg" />
+        <title>Reset Password</title>
+        <meta name="Reset Password" content="Reset Password" />
+      </Head>
       {correctUser === "2" ? (
         <div className={classes.box}>
           <div className={classes.part1}>

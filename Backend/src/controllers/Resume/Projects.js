@@ -1,24 +1,50 @@
 const changeDate = require("./ChangeDate");
+const path = require("path");
 
 module.exports = Projects = (projects, pdfDoc) => {
   pdfDoc.moveDown(0.25);
   const ProjectsX = pdfDoc.page.margins.left;
   let ProjectsY = pdfDoc.y;
   projects.forEach((project) => {
+    const linkType =
+      project.link.substr(8, 6) == "github" ? "github.png" : "link.png";
+    const githubImage = path.join(
+      "src",
+      "Userimage",
+      "platfrom",
+      `${linkType}`
+    );
     pdfDoc
       .font("Helvetica-Bold")
       .fontSize(10)
       .text(project.name, ProjectsX, ProjectsY, {
-        align: "left",
         continued: true,
       });
+    const projectNameWidth = pdfDoc.widthOfString(project.name, {
+      font: "Helvetica-Bold",
+      fontSize: 10,
+    });
+
+    const separatorX = ProjectsX + projectNameWidth;
     pdfDoc
       .font("Helvetica")
       .fontSize(9)
       .text("  |  " + project.under, ProjectsX, ProjectsY, {
-        align: "left",
         continued: true,
       });
+    const separatorWidth = pdfDoc.widthOfString("  |  " + project.under, {
+      font: "Helvetica",
+      fontSize: 9,
+    });
+
+    const githubImageX = separatorX + separatorWidth;
+    pdfDoc.image(githubImage, githubImageX + 3, ProjectsY - 2, {
+      link: project.link,
+      width: 11,
+      height: 11,
+      continued: true,
+    });
+
     if (project.startDate == "") {
       pdfDoc.y += 10;
     }
@@ -44,14 +70,14 @@ module.exports = Projects = (projects, pdfDoc) => {
       }
       filteredSentences[i] += ".";
     }
-    project.description = filteredSentences;
-
+    pdfDoc.x += 10;
     pdfDoc.moveDown(0.2);
     pdfDoc
       .font("Helvetica")
       .fontSize(9)
-      .list(project.description, { bulletRadius: 1.5 });
+      .list(filteredSentences, { bulletRadius: 1.5 });
+    pdfDoc.x -= 10;
     pdfDoc.moveDown(0.2);
-    ProjectsY = pdfDoc.y;
+    ProjectsY = pdfDoc.y + 1;
   });
 };

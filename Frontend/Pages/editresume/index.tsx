@@ -26,6 +26,8 @@ const editresume: React.FC = () => {
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/logo.png" />
+        <title>Edit Resume</title>
+        <meta name="Edit Resume" content="Edit Resume" />
       </Head>
       <Header setIslogin={setIslogin} />
       {islogin && (

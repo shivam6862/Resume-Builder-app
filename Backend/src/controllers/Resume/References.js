@@ -37,5 +37,6 @@ module.exports = References = (references, pdfDoc) => {
       .text(reference.number, ProjectsX, ProjectsY, {
         align: "left",
       });
+    ProjectsY += 2.5;
   });
 };

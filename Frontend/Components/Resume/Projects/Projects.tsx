@@ -23,6 +23,7 @@ const Projects: React.FC = () => {
           endDate={item.endDate}
           id={item.id}
           key={item.id}
+          link={item.link}
         />
       ))}
     </div>

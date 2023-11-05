@@ -21,6 +21,7 @@ const ExtraCurricular: React.FC = () => {
           under={item.under}
           id={item.id}
           key={item.id}
+          link={item.link}
         />
       ))}
     </div>

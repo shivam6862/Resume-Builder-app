@@ -11,6 +11,7 @@ interface ProjectsItemProps {
   under: string;
   startDate: string;
   endDate: string;
+  link: string;
   id: string;
 }
 
@@ -21,6 +22,7 @@ const ProjectsItem: React.FC<ProjectsItemProps> = ({
   under,
   startDate,
   endDate,
+  link,
   id,
 }) => {
   return (
@@ -68,6 +70,18 @@ const ProjectsItem: React.FC<ProjectsItemProps> = ({
               id={id}
               page={"projects"}
               where={"description"}
+            />
+          </div>
+        </div>
+        <div className={Style.combine_Item}>
+          <div className={Style.achievement}>Link</div>
+          <div className={Style.input}>
+            <InputArea
+              type="text"
+              value={link}
+              id={id}
+              page={"projects"}
+              where={"link"}
             />
           </div>
         </div>

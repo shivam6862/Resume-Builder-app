@@ -9,6 +9,8 @@ const HomePage: React.FC = () => {
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/logo.jpeg" />
+        <title>Resume Builder</title>
+        <meta name="Resume Builder" content="Resume Builder" />
       </Head>
       <Header />
       <Home />

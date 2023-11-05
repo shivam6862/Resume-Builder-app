@@ -174,6 +174,10 @@ const resumeSchema = new Schema({
         type: String,
         trim: true,
       },
+      link: {
+        type: String,
+        trim: true,
+      },
       id: {
         type: String,
       },
@@ -219,6 +223,10 @@ const resumeSchema = new Schema({
           required: [true, "Description required!"],
         },
       ],
+      link: {
+        type: String,
+        trim: true,
+      },
       id: {
         type: String,
       },

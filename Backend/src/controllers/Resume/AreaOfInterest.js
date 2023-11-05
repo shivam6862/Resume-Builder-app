@@ -3,6 +3,8 @@ module.exports = AreaOfInterest = (aoi, pdfDoc) => {
   aoi.forEach((element) => {
     newItems += element.item + ", ";
   });
+  newItems = newItems.slice(0, -2);
+  newItems += ".";
   pdfDoc
     .moveDown(0.25)
     .font("Helvetica")

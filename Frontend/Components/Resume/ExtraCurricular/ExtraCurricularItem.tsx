@@ -10,6 +10,7 @@ interface ExtraCurricularItemProps {
   description: string;
   startDate: string;
   endDate: string;
+  link: string;
   id: string;
 }
 
@@ -19,6 +20,7 @@ const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
   description,
   startDate,
   endDate,
+  link,
   id,
 }) => {
   return (
@@ -66,6 +68,18 @@ const ExtraCurricularItem: React.FC<ExtraCurricularItemProps> = ({
               id={id}
               page={"poraec"}
               where={"description"}
+            />
+          </div>
+        </div>
+        <div className={Style.combine_Item}>
+          <div className={Style.achievement}>Link</div>
+          <div className={Style.input}>
+            <InputArea
+              type="text"
+              value={link}
+              id={id}
+              page={"poraec"}
+              where={"link"}
             />
           </div>
         </div>

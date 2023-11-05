@@ -36,6 +36,7 @@ interface UserProject {
   description: string;
   startDate: string;
   endDate: string;
+  link: string;
   id: string;
 }
 interface UserAsaaItem {
@@ -52,6 +53,7 @@ interface UserPoraeC {
   startDate: string;
   endDate: string;
   description: string;
+  link: string;
   id: string;
 }
 interface UserPublications {
@@ -153,6 +155,7 @@ const initialState: ResumeInterfaceState = {
       startDate: "",
       endDate: "",
       id: uuidv4(),
+      link: "",
     },
   ],
   asaa: [
@@ -175,6 +178,7 @@ const initialState: ResumeInterfaceState = {
       endDate: "",
       description: "",
       id: uuidv4(),
+      link: "",
     },
   ],
   Publications: [
